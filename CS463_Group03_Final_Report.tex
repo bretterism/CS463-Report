@@ -5,16 +5,6 @@
 %% by Michael Shell
 %% see http://www.michaelshell.org/
 %% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% journal paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/pkg/ieeetran
-%% and
-%% http://www.ieee.org/
 
 %%*************************************************************************
 %% Legal Notice:
@@ -40,315 +30,20 @@
 %% ** renaming them and changing author support contact information. **
 %%*************************************************************************
 
-
-% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
-% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. The IEEE's font choices and paper sizes can   ***
-% *** trigger bugs that do not appear when using other class files.       ***                          ***
-% The testflow support page is at:
-% http://www.michaelshell.org/tex/testflow/
-
-
-
 \documentclass[10pt, onecolumn, twoside, peerreview]{IEEEtran}
 \usepackage[letterpaper, margin=0.75in]{geometry}
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[journal]{../sty/IEEEtran}
-
-
-
-
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/pkg/ifpdf
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
-%\usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of the IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off
-% such as if a citation ever needs to be enclosed in parenthesis.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 5.0 (2009-03-20) and later if using hyperref.sty.
-% The latest version can be obtained at:
-% http://www.ctan.org/pkg/cite
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
 
 
 % *** GRAPHICS RELATED PACKAGES ***
-%
-% \ifCLASSINFOpdf
-  % \usepackage{pstricks}
-  \usepackage{longtable,tabu}
-  \usepackage{graphicx}
-  \usepackage{caption}
-  % declare the path(s) where your graphic files are
-  \graphicspath{{images/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  \DeclareGraphicsExtensions{.JPG,.pdf}
-% \else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-  % \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
-% \fi
-% graphicx was written by David Carlisle and Sebastian Rahtz. It is
-% required if you want graphics, photos, etc. graphicx.sty is already
-% installed on most LaTeX systems. The latest version and documentation
-% can be obtained at: 
-% http://www.ctan.org/pkg/graphicx
-% Another good source of documentation is "Using Imported Graphics in
-% LaTeX2e" by Keith Reckdahl which can be found at:
-% http://www.ctan.org/pkg/epslatex
-%
-% latex, and pdflatex in dvi mode, support graphics in encapsulated
-% postscript (.eps) format. pdflatex in pdf mode supports graphics
-% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
-% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
-% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
-% which can result in "jaggedy"/blurry rendering of lines and letters as
-% well as large increases in file sizes.
-%
-% You can find documentation about the pdfTeX application at:
-% http://www.tug.org/applications/pdftex
-
-
-
-
-
-% *** MATH PACKAGES ***
-%
-%\usepackage{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics.
-%
-% Note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
-%\interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/amsmath
-
-
-
-
-
-% *** SPECIALIZED LIST PACKAGES ***
-%
-%\usepackage{algorithmic}
-% algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
-% http://www.ctan.org/pkg/algorithms
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/pkg/algorithmicx
-
-
-
-
-% *** ALIGNMENT PACKAGES ***
-%
-%\usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/array
-
-
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
-
-
-
-
-% *** SUBFIGURE PACKAGES ***
-%\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-%\else
-%  \usepackage[caption=false,font=footnotesize]{subfig}
-%\fi
-% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
-% for subfigure.sty, the latter of which is no longer maintained and is
-% incompatible with some LaTeX packages including fixltx2e. However,
-% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
-% which will override IEEEtran.cls' handling of captions and this will result
-% in non-IEEE style figure/table captions. To prevent this problem, be sure
-% and invoke subfig.sty's "caption=false" package option (available since
-% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
-% handling of captions.
-% Note that the Computer Society format requires a larger sans serif font
-% than the serif footnote size font used in traditional IEEE formatting
-% and thus the need to invoke different subfig.sty package options depending
-% on whether compsoc mode has been enabled.
-%
-% The latest version and documentation of subfig.sty can be obtained at:
-% http://www.ctan.org/pkg/subfig
-
-
-
-
-% *** FLOAT PACKAGES ***
-%
-%\usepackage{fixltx2e}
-% fixltx2e, the successor to the earlier fix2col.sty, was written by
-% Frank Mittelbach and David Carlisle. This package corrects a few problems
-% in the LaTeX2e kernel, the most notable of which is that in current
-% LaTeX2e releases, the ordering of single and double column floats is not
-% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
-% single column figure to be placed prior to an earlier double column
-% figure.
-% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
-% corrections already built into the system in which case a warning will
-% be issued if an attempt is made to load fixltx2e.sty as it is no longer
-% needed.
-% The latest version and documentation can be found at:
-% http://www.ctan.org/pkg/fixltx2e
-
-
-%\usepackage{stfloats}
-% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
-% the ability to do double column floats at the bottom of the page as well
-% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
-% LaTeX2e). It also provides a command:
-%\fnbelowfloat
-% to enable the placement of footnotes below bottom floats (the standard
-% LaTeX2e kernel puts them above bottom floats). This is an invasive package
-% which rewrites many portions of the LaTeX2e float routines. It may not work
-% with other packages that modify the LaTeX2e float routines. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/stfloats
-% Do not use the stfloats baselinefloat ability as the IEEE does not allow
-% \baselineskip to stretch. Authors submitting work to the IEEE should note
-% that the IEEE rarely uses double column equations and that authors should try
-% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
-% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
-% such ways.
-% Do not attempt to use stfloats with fixltx2e as they are incompatible.
-% Instead, use Morten Hogholm'a dblfloatfix which combines the features
-% of both fixltx2e and stfloats:
-%
-% \usepackage{dblfloatfix}
-% The latest version can be found at:
-% http://www.ctan.org/pkg/dblfloatfix
-
-
-
-
-%\ifCLASSOPTIONcaptionsoff
-%  \usepackage[nomarkers]{endfloat}
-% \let\MYoriglatexcaption\caption
-% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
-%\fi
-% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
-% Axel Sommerfeldt. This package may be useful when used in conjunction with 
-% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
-% submissions have lists of figures/tables at the end of the paper and that
-% figures/tables without any captions are placed on a page by themselves at
-% the end of the document. If needed, the draftcls IEEEtran class option or
-% \CLASSINPUTbaselinestretch interface can be used to increase the line
-% spacing as well. Be sure and use the nomarkers option of endfloat to
-% prevent endfloat from "marking" where the figures would have been placed
-% in the text. The two hack lines of code above are a slight modification of
-% that suggested by in the endfloat docs (section 8.4.1) to ensure that
-% the full captions always appear in the list of figures/tables - even if
-% the user used the short optional argument of \caption[]{}.
-% IEEE papers do not typically make use of \caption[]'s optional argument,
-% so this should not be an issue. A similar trick can be used to disable
-% captions of packages such as subfig.sty that lack options to turn off
-% the subcaptions:
-% For subfig.sty:
-% \let\MYorigsubfloat\subfloat
-% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
-% However, the above trick will not work if both optional arguments of
-% the \subfloat command are used. Furthermore, there needs to be a
-% description of each subfigure *somewhere* and endfloat does not add
-% subfigure captions to its list of figures. Thus, the best approach is to
-% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
-% and instead reference/explain all the subfigures within the main caption.
-% The latest version of endfloat.sty and its documentation can obtained at:
-% http://www.ctan.org/pkg/endfloat
-%
-% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
-% later in the document, say, to conditionally put the References on a 
-% page by themselves.
-
-
-
-
-% *** PDF, URL AND HYPERLINK PACKAGES ***
-%
-%\usepackage{url}
-% url.sty was written by Donald Arseneau. It provides better support for
-% handling and breaking URLs. url.sty is already installed on most LaTeX
-% systems. The latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/url
-% Basically, \url{my_url_here}.
-
-
-
-
-% *** Do not adjust lengths that control margins, column widths, etc. ***
-% *** Do not use packages that alter fonts (such as pslatex).         ***
-% There should be no need to do such things with IEEEtran.cls V1.6 and later.
-% (Unless specifically asked to do so by the journal or conference you plan
-% to submit to, of course. )
-
+\usepackage{longtable,tabu}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{pdfpages}
+% declare the path(s) where your graphic files are
+\graphicspath{{images/}{docs/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+\DeclareGraphicsExtensions{.JPG,.pdf}
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -394,16 +89,9 @@
    captionpos=b
 }
 
+
 \begin{document}
-%
-% paper title
-% Titles are generally capitalized except for words such as a, an, and, as,
-% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
-% not capitalized unless they are the first or last word of the title.
-% Linebreaks \\ can be used within to get better formatting as desired.
-% Do not put math or special symbols in the title.
 \title{Silicon Tracking Solutions}
-%
 %
 % author names and IEEE memberships
 % note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
@@ -422,54 +110,9 @@
 \thanks{CS463/ Spring 2016 / Group 03}% <- this % stops a space
 \thanks{Final Report}}
 
-
-% note the % following the last \IEEEmembership and also \thanks - 
-% these prevent an unwanted space from occurring between the last author name
-% and the end of the author line. i.e., if you had this:
-% 
-% \author{....lastname \thanks{...} \thanks{...} }
-%                     ^------------^------------^----Do not want these spaces!
-%
-% a space would be appended to the last name and could cause every name on that
-% line to be shifted left slightly. This is one of those "LaTeX things". For
-% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
-% "AB" then you have to do: "\textbf{A}\textbf{B}"
-% \thanks is no different in this regard, so shield the last } of each \thanks
-% that ends a line with a % and do not let a space in before the next \thanks.
-% Spaces after \IEEEmembership other than the last one are OK (and needed) as
-% you are supposed to have spaces between the names. For what it is worth,
-% this is a minor point as most people would not even notice if the said evil
-% space somehow managed to creep in.
-
-
-
 % The paper headers
 \markboth{Final Report \today}%
-{Silicon Tracking Solutions}%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
-% The only time the second header will appear is for the odd numbered pages
-% after the title page when using the twoside option.
-% 
-% *** Note that you probably will NOT want to include the author's ***
-% *** name in the headers of peer review papers.                   ***
-% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
-% you desire.
-
-
-
-
-% If you want to put a publisher's ID mark on the page you can do it like
-% this:
-%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
-% Remember, if you use this you must call \IEEEpubidadjcol in the second
-% column for its text to clear the IEEEpubid mark.
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-
-
+{Silicon Tracking Solutions}
 
 % make the title area
 \maketitle
@@ -487,22 +130,6 @@ and check it back in when they are done. This ensures that highly sensitive mate
 who has had ownership of the item, as well as letting others know who currently is in ownership of the item.
 \end{abstract}
 
-% Note that keywords are not normally used for peerreview papers.
-% \begin{IEEEkeywords}
-% IEEE, IEEEtran, journal, \LaTeX, paper, template.
-% \end{IEEEkeywords}
-
-
-
-
-
-
-% For peer review papers, you can put extra information on the cover
-% page as needed:
- \ifCLASSOPTIONpeerreview
- % \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
- \fi
-%
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
@@ -510,47 +137,44 @@ who has had ownership of the item, as well as letting others know who currently 
 
 
 \section{Introduction} 
-% The very first letter is a 2 line initial drop letter followed % by the rest of the first word in caps. %
-% form to use if the first word consists of a single letter: % \IEEEPARstart{A}{demo} file is .... %
-% form to use if you need the single drop letter followed by % normal text (unknown if ever used by the IEEE): %
-% \IEEEPARstart{A}{}demo file is .... %
-% Some journals put the first two words in caps: 
-% \IEEEPARstart{T}{his demo} file is .... %
-% Here we have the typical use of a "T" for an initial drop letter % and "HIS" in caps to complete the first word. 
-\IEEEPARstart{T}{he} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi viverra tortor at nunc tristique,
-et faucibus magna tempus. Vestibulum elementum dolor in porttitor facilisis. Vivamus commodo nibh nulla, eget suscipit
-felis tincidunt sed. Proin ut metus diam. Phasellus consectetur congue elit, quis vehicula nunc facilisis quis. Morbi
-dapibus risus vitae felis blandit pulvinar. Maecenas fringilla leo sed dictum pulvinar. Sed tempus, felis vel tincidunt
-varius, dui nulla laoreet orci, vel accumsan magna erat sed est. Aenean luctus quam a feugiat malesuada. Duis viverra
-lectus purus, id malesuada risus bibendum at. Aenean malesuada, magna id facilisis dapibus, leo nulla fermentum elit,
-nec imperdiet purus nisi non arcu. Suspendisse placerat, est nec feugiat tincidunt, ex risus dictum ante, id dignissim
-lectus lorem vitae odio. Fusce ac quam ut arcu porta ultrices. Quisque porta volutpat tortor, ut ultricies velit
-viverra eget.\\
 
-Nulla facilisi. Donec cursus sodales est, quis eleifend urna congue sit amet. Nunc accumsan, mi sed dapibus convallis,
-nunc felis auctor libero, a maximus nulla mauris ut enim. Vivamus vulputate ipsum odio, vel tincidunt leo aliquam in.
-In varius urna quis purus iaculis aliquam. Donec egestas lectus vitae justo dapibus, et pharetra risus lobortis. Nullam
-pulvinar justo ut purus efficitur ornare. Proin rutrum dictum purus eget vehicula.\\
+\subsection{Who Requested it?}
+This project was requested by our client Scott, along with his team at Intel.
 
-Proin ut ipsum ante. Nulla porttitor eros at metus pretium viverra. Vestibulum ut elit at dui accumsan convallis ac vel
-mauris. Cras venenatis ante ac arcu volutpat vehicula. Nullam id tortor vitae augue interdum ultricies. Cras pharetra
-elit sed viverra scelerisque. Aenean cursus nulla ut arcu posuere hendrerit. Vestibulum ante ipsum primis in faucibus
-orci luctus et ultrices posuere cubilia Curae; Integer ipsum libero, tempor et ornare in, facilisis vel ex. Integer
-eget leo facilisis erat euismod rhoncus. Quisque sapien quam, dictum vitae arcu id, posuere aliquet lacus. Phasellus
-porttitor tortor metus, eu vehicula eros condimentum et. Praesent odio justo, sagittis id vestibulum sed, posuere sit
-amet neque.\\
+\subsection{Why Was It Requested?}
+Scott’s team needs to keep inventory of all of their CPU silicon in their lab. These silicon pieces have no real identifiable marks other than a serial number. The members of Scott’s lab needed an easy way to retrieve information about the silicon. The other reason for this inventory system is to know who has which silicon. Each piece of silicon is considered very valuable to Intel, so they need a way to know who has taken silicon in order to do testing. They also want to know who has which silicon for their own team’s sake. They like to know if a certain piece of silicon is being used by another team member, and to know as soon as their teammate is done with it.
 
-Integer et ornare orci. Aliquam eget ligula et tortor finibus condimentum. Quisque at tempor risus. Vivamus fringilla
-lobortis eros, nec eleifend sapien lacinia eu. Mauris interdum pulvinar nisl vel aliquam. In eget nibh id risus aliquam
-efficitur. Vestibulum gravida ante quis tortor placerat dapibus. Aliquam dignissim vestibulum tempor. Integer nec porta
-sem, et egestas libero. Nam vel nisl quis nulla volutpat pretium. Aliquam luctus laoreet imperdiet.\\
+\subsection{What Is Its Importance?}
+It is important for the team members to have an easy-to-use system that helps them do their work more efficiently than they could without it. It is meant to save them time, and get to the important parts of their work. This system is also important in preventing the loss of silicon, which could be very costly.
 
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
+\subsection{Who Was/Were Your Client(s)?}
+Scott Oehrlein
+
+\subsection{Who Are the Members of Your Team?}
+Brett Hayes, Joseph Cronise, and Dylan Camus
+
+\subsection{What Were Their Roles?}
+None of the members took on a specific role for the project. There were many tasks to the project, so everyone had to take on multiple roles, with much overlap between roles. The description of the roles provided will be about which member was the primary caretaker for that part of the project.\\
+
+Brett was responsible for the server-side implementation. He created the basic structure and maintained a lot of the server-side code. He was also responsible for a lot of the dynamic code running on the client. Brett also set-up a task list each term, to make sure the team was on track throughout the project.\\
+
+Dylan was in charge of the database. He worked on the design structure, and created many of the stored procedures used in the current system. He was also responsible for the emailing system, which included sending immediate emails and scheduled emails.\\
+
+Joseph came up with the original design of the website, and was responsible for the research involved in facial recognition.
+
+\subsection{What Was the Role of the Client(s)? (I.e., Did They Supervise Only, or Did They Participate in Doing Development)}
+None of the members took on a specific role for the project. There were many tasks to the project, so everyone had to take on multiple roles, with much overlap between roles. The description of the roles provided will be about which member was the primary caretaker for that part of the project.\\
+
+Brett was responsible for the server-side implementation. He created the basic structure and maintained a lot of the server-side code. He was also responsible for a lot of the dynamic code running on the client. Brett also set-up a task list each term, to make sure the team was on track throughout the project.\\
+
+Dylan was in charge of the database. He worked on the design structure, and created many of the stored procedures used in the current system. He was also responsible for the emailing system, which included sending immediate emails and scheduled emails.\\
+
+Joseph came up with the original design of the website, and was responsible for the research involved in facial recognition.
+
 
 \section{The Original Requirements Document}
 This is the Requirements Document we wrote at the beginning of the
-project. It has been re-formatted to keep consistent styling across the document, but the content of the document has
+project. It has been reformatted to keep consistent styling with this document, but the content of the document has
 not been modified. We have also indexed the requirements in this document for easy reference. The original document in its original formatting is included on the usb storage drive.
 \subsection{Introduction}
 
@@ -778,439 +402,381 @@ only see the possible filters for cache size based on the items with the specifi
 \end{figure}
 \clearpage
 
-\section{Project Changes Since the Original Client Requirements Document}
+\section{Changes Since the Original Client Requirements Document}
 
 \begin{center}
-	\begin{longtabu} to \textwidth {|X[1,l]|X[10,l]|X[10,l]|X[10,l]|}
-		\hline
-		\# & Requirement & Reason For Changes & Comments \\ \hline
-		2 & Give a reason and a priority when queueing an item. This will create a priority queue for the users. If someone needs an item and it is important, they can give a reason why. & Our client stated that since they are a small team, they only needed an email stating that the item has been checked in. All the people can meet up and talk about who gets the item next. & \\ \hline
-		10 & Retire old items in the system. They need to logically delete (scrap) items when an item is no longer being used. There should be a textbox to optionally give a reason for the item being retired. & There is no textbox to give a reason for the item being scrapped. Each item has a notes field, and we decided that the best option was to place the reason for scrapping in the item’s notes field. & \\ \hline
-		13 & Be able to scan an item that is currently checked in to see who has the item reserved next. This will show the next person in line for the item. & We decided not to be concerned about this, because everyone who reserved an item will discuss in person who needs the item next. & \\ \hline
-		17 & If the item is scanned and the item is checked in, it will now be checked out by the user. If the item was already checked out, information about who currently has the item checked out will be displayed on the screen. & Our client asked if we could make it so one person can check in another’s item. & \\ \hline
-		19 & When the user is done, they will press a confirm button and will be shown a list of items they have checked in/out. The user can then proceed to commit their transaction to the database. & We made it so they only need to press one button to commit their transaction. A message appears now to just show what items they checked in/out, after they have committed. & \\ \hline
-		29 & Admins will have the ability to enable/disable any of the three authentication methods (username/password, RFID tag, or facial recognition). If for whatever reason the admin does not want one of these methods available, they can disable that method of authentication. & Our client’s team implemented RFID security, and the facial recognition was implemented very late in the development phase of the project, so we didn’t get a chance to implement this setting. & \\ \hline
-		N/A & The Interfaces & In our original Requirements Document, we had four interfaces. After starting work on this project, we simplified the system down to two interfaces. It made the system easier to discuss and navigate. We boiled down the interfaces into the Web interface and the Kiosk interface. The Shopping Cart interface, Scrapping interface, and Reporting interface have mostly been combined into the Web interface. The Main Interface has mostly been reworked into the Kiosk interface. & All of the requirements within the Interfaces section have been fulfilled, but not necessarily in all of the interfaces specified. \\ \hline
-		44 \& 45 & Will be able to check in items from this interface. If they are at the kiosk they should have a way to check in items using this interface. Will be able to check out items from this interface. & Our client let us know that they only need to check in and check out items from one interface. Our original Requirements Document had checking in and out of items from two interfaces. We removed the Checking in and out requirements to allow for these features to happen in only one place. & \\ \hline
-		59 & Anybody can scan sample RFID cards to check in or out items. We will have sample items for them to scan, and they can use fake RFID badges to simulate the experience. & Our client’s team implemented the RFID readers, so we did not show how they worked at expo. & \\ \hline
-		N/A & New Requirement: Sanitizing and Validation User Input & We did not place in our original document to clean up any user input and make sure that their input is valid. It was an important feature, and our client did ask that we created a system where data entered would be consistent. & \\ \hline
-		N/A & New Requirement: Editing Dropdown Menu Items & We setup a page for the admins to change the dropdown menu items. These dropdowns are found when inserting or editing an item. Our client liked the idea of not having to make edits directly in the database, so we implemented this feature. & \\ \hline
-		N/A & New Requirement: Quick Check in/out. & We added an extra feature for when a user scans an item to get the item's information, they can click a Check In/Out button to save the item for later. It makes it easier for the user to check in or out an item as soon as they scan it, and makes the workflow a little smoother. & Our client's team received this feature very well and were thankful to have it. \\ \hline
-	\end{longtabu}
+		\begin{longtabu} to \textwidth {|X[1,l]|X[10,c]|X[10,c]|X[10,c]|}
+			\hline
+			\# & Requirement & Reason For Changes & Comments \\ \hline
+			2 & Give a reason and a priority when queueing an item. This will create a priority queue for the users. If someone needs an item and it is important, they can give a reason why. & Our client stated that since they are a small team, they only needed an email stating that the item has been checked in. All the people can meet up and talk about who gets the item next. & \\ \hline
+			10 & Retire old items in the system. They need to logically delete (scrap) items when an item is no longer being used. There should be a textbox to optionally give a reason for the item being retired. & There is no textbox to give a reason for the item being scrapped. Each item has a notes field, and we decided that the best option was to place the reason for scrapping in the item’s notes field. & \\ \hline
+			13 & Be able to scan an item that is currently checked in to see who has the item reserved next. This will show the next person in line for the item. & We decided not to be concerned about this, because everyone who reserved an item will discuss in person who needs the item next. & \\ \hline
+			17 & If the item is scanned and the item is checked in, it will now be checked out by the user. If the item was already checked out, information about who currently has the item checked out will be displayed on the screen. & Our client asked if we could make it so one person can check in another’s item. & \\ \hline
+			19 & When the user is done, they will press a confirm button and will be shown a list of items they have checked in/out. The user can then proceed to commit their transaction to the database. & We made it so they only need to press one button to commit their transaction. A message appears now to just show what items they checked in/out, after they have committed. & \\ \hline
+			29 & Admins will have the ability to enable/disable any of the three authentication methods (username/password, RFID tag, or facial recognition). If for whatever reason the admin does not want one of these methods available, they can disable that method of authentication. & Our client’s team implemented RFID security, and the facial recognition was implemented very late in the development phase of the project, so we didn’t get a chance to implement this setting. & \\ \hline
+			N/A & The Interfaces & In our original Requirements Document, we had four interfaces. After starting work on this project, we simplified the system down to two interfaces. It made the system easier to discuss and navigate. We boiled down the interfaces into the Web interface and the Kiosk interface. The Shopping Cart interface, Scrapping interface, and Reporting interface have mostly been combined into the Web interface. The Main Interface has mostly been reworked into the Kiosk interface. & All of the requirements within the Interfaces section have been fulfilled, but not necessarily in all of the interfaces specified. \\ \hline
+			44 \& 45 & Will be able to check in items from this interface. If they are at the kiosk they should have a way to check in items using this interface. Will be able to check out items from this interface. & Our client let us know that they only need to check in and check out items from one interface. Our original Requirements Document had checking in and out of items from two interfaces. We removed the Checking in and out requirements to allow for these features to happen in only one place. & \\ \hline
+			59 & Anybody can scan sample RFID cards to check in or out items. We will have sample items for them to scan, and they can use fake RFID badges to simulate the experience. & Our client’s team implemented the RFID readers, so we did not show how they worked at expo. & \\ \hline
+			N/A & New Requirement: Sanitizing and Validation User Input & We did not place in our original document to clean up any user input and make sure that their input is valid. It was an important feature, and our client did ask that we created a system where data entered would be consistent. & \\ \hline
+			N/A & New Requirement: Editing Dropdown Menu Items & We setup a page for the admins to change the dropdown menu items. These dropdowns are found when inserting or editing an item. Our client liked the idea of not having to make edits directly in the database, so we implemented this feature. & \\ \hline
+			N/A & New Requirement: Quick Check in/out. & We added an extra feature for when a user scans an item to get the item's information, they can click a Check In/Out button to save the item for later. It makes it easier for the user to check in or out an item as soon as they scan it, and makes the workflow a little smoother. & Our client's team received this feature very well and were thankful to have it. \\ \hline
+		\end{longtabu}
 \end{center}
 
-\section{Describe Any Problems that Have Impeded Your Progress, With Any
-Solutions You Have}
+\section{The Original Design Document}
 
-We have talked about a few of our blockers in the previous
-sections. For instance there is the issue of facial recognition. The other main
-issue is with authentication. These two main issues come from the security
-concerns and policies at Intel, and hardware issues that we are currently dealing with.\\
+Below is the original Design Document written at the beginning of the project's lifespan, in its original formatting.
+It describes our course of action for designing the components, database design, and the workflow of the system. The
+original document is also included on our USB storage drive.
 
-There is not really a way for us to get access to how Intel authenticates its
-users. So the best that we can do with authentication is come up with our own
-version of authentication and try to make it as close to how we believe their
-system works. As mentioned earlier, we have created such a system that handles
-authentication. It's a server that accepts web requests, and returns a WWID
-upon successful authentication. The only real information that we know about
-their authentication system is that our application will need to interact with
-their authentication server through a web request. Our service does exactly
-this. We have been as clear as possible in our code, because the employees at
-Intel will have to modify this portion of our code in order to make it work on
-their system. We thoroughly commented our code, and I have written to our
-client a detailed explanation of how we designed our authentication.\\
+\includepdf[pages={-}]{CS461_Group03_Design_Document}
 
-A smaller problem that we have been faced with is that we only have sample data
-for CPUs. All the other items behave almost identically. They will have a
-barcode to be scanned, and will check in and check out through the same methods
-as the CPU. This is not a big issue, we just can't test any other items besides
-CPU, unless we take a CPU and put it in the system as another item.\\
+\section {Changes Since the Original Design Document}
+We have changed the design of the high-level architecture. When we first started designing the project, we weren’t sure on how the scanner would work. We had thought that we would have to design a separate component for the scanner to handle events and sent barcode information to the server. After playing with the scanner, we learned of its behavior and was able to handle the barcode scan as an event inside the Interface component. The scanner simulates a keyboard and presses a key for each character of the barcode it just scanned. We were able to systematically determine when a barcode was scanned and when a human was typing on the keyboard, thus having no need to separate the scanner into its own component.\\
 
-Whenever we need to use the barcode scanner, we have to go to the capstone lab
-on campus. This was a little frustrating, especially when going to the capstone
-lab was not an option. To remedy this, we came up with a program that simulates
-our barcode scanner. It's a small python script that behaves in the same way as
-our scanner when you give it a serial number. This has allowed us to develop
-features for the barcode scanner without even using the scanner!
+Along with the scanner being a part of the Interface component, we also moved the Authentication component into the Interface component. We basically created only a single component that the user can have direct access to. This created a much simpler design and made it easier to develop, since there were less components all needing to communicate with the server.\\
 
-\clearpage
+We had originally thought we would need to create a system that authenticates users based off  an Active Directory server. After creating this document, we found out that the system would need to just send a web request to authenticate. We weren’t told any more information, since that would be a security breach. We ended up creating a mock authentication system and we let our client’s team handle the security from there.\\
 
-\section{Include Any Particularly Interesting Pieces of Code}
-This is an example of some of our back-end code. We are using express.js for our back-end. Express is a package of node.js, a lightweight, asynchronous, open-source runtime environment in JavaScript. This example is showing when a user makes a POST request to the server, when the user adds a new CPU item. The server responds anytime there is a POST request to the URI "/add/cpu". The server first sanitizes the input with our scrub library, and then checks user input with the validation library. If the validator returns with errors, the server sends the error messages back to the web interface. Only when the validator approves of the input does the server make a database call. With valid input, the server makes a call to the database for a stored procedure, which will insert the CPU information into the database.
-\begin{lstlisting}[language=Javascript, caption=Server-side Request Handler]
-  app.post('/add/cpu', function(req, res) {
-    req.body = scrub.CPU(req.body);
-    var verrors = validate.CPU(req.body);
+In the Interface component, we had split the design work into two subcomponents. These subcomponents are the the Web interface and the Kiosk interface. The Web interface is for monitoring and viewing large sets of information, adding, editing, or removing items, etc. It is designed to be used for any work that would be easier to use a computer with keyboard and mouse. The Kiosk interface is designed in a way to be touch friendly, and to handle quick transactions, such as the checking in and out of the silicon chips.\\
 
-    if (verrors) {
-      res.status(400).send(verrors);
-    } else {
-      pool.getConnection(function(err, conn) {
-        conn.query("CALL check_serial_cpu('"+req.body.serial_num+"');",
-          function(error, results, fields){
-            if(error) {
-              throw error;
-            }
-            
-            if(results[0].length == 0) {
-              conn.query("CALL put_cpu('"+req.body.serial_num+"','"
-                +req.body.spec+"','"+req.body.mm+"','"
-                +req.body.frequency+"','"+req.body.stepping+"','"
-                +req.body.llc+"','"+req.body.cores+"','"
-                +req.body.codename+"','"+req.body.cpu_class+"','"
-                +req.body.external_name+"','"+req.body.architecture+"','"
-                +req.body.notes+"');",
-              function(error, results, fields){
-                if(error) {
-                  throw error;
-                }
-              });
-            }
-            conn.release();
-            res.status(200).send(req.body);
-        });
-      });
-    } 
-  });
-\end{lstlisting}
+The database schema has changed since the original design. We originally had a table for each type of item. Today we still have those item type tables, but we have a more generic table that specifies what the item type is, and references data in the more specific tables. The generic table, “Items”, holds the barcode, the notes for the item, if the item is checked in, and if the item has been scrapped, or logically deleted.\\
 
-The following code below shows how we implemented the barcode scanner. This
-code runs on the kiosk interface in the login page. It is continuously
-listening for keyboard input. The way the barcode scanner works is it acts like
-a keyboard. When it scans an item, it "types" in the letters of the serial
-number one at a time. We came up with an idea that if the barcode types faster
-than what is humanly possible, we should be able to decipher between a barcode
-scan and a human typing. Once some keyboard input comes in, our code starts a
-timer. The code will push all the keys pressed into an array. If there are ten
-key presses within 250 milliseconds, we will know that it is a barcode scan
-instead of a human typing! Once an item is scanned, it requests from the server
-information about the item just scanned. Once information is returned to the
-client, it displays the item information on the screen.
-\begin{lstlisting}[language=Javascript, caption=Barcode Scanner Listener]
-$(window).keypress(function(e) {
-      chars.push(String.fromCharCode(e.which));
-      if (pressed == false) {
-          setTimeout(function(){
-              // If there are ten characters inserted before the timeout
-              if (chars.length >= 10) {
-                  var barcode = chars.join("");
-                  // There was an item scanned. Enter response code here.
-                  var itemInfo = "";
-                  $.get('/serial/'+barcode, function(data) {
-                    if (data.item_type === 'cpu') {$('#item-info').html(CPUInfo(data));}
-                    else if (data.item_type === 'ssd') {$('#item-info').html(SSDInfo(data));}
-                    else if (data.item_type === 'memory') {$('#item-info').html(MemoryInfo(data));}
-                    else if (data.item_type === 'flash_drive') {$('#item-info').html(FlashDriveInfo(data));}
-                    else if (data.item_type === 'board') {$('#item-info').html(BoardInfo(data));}
-                    else {$('#item-info').html(ErrorInfo());}
-                  });
-              }
-              chars = [];
-              pressed = false;
-          },250); // <-- this is the timeout in milliseconds
-      }
-      pressed = true;
-  });
-\end{lstlisting}
+After a large amount of research and help from mentors, we had discovered that the SDK for the Intel RealSense Camera was not compatible with facial recognition on a web browser. This meant that we couldn’t use the facial recognition software that was designed for this camera. We had to instead take two images using the RealSense camera. The camera takes an RGB image and a depth image, and uses Open Source Biometric Recognition (OpenBR), a runtime library for image processing, to do facial recognition on the RGB photo and an image comparison for the depth image.\\
 
-\section{User Studies}
-We continually talk with our client about the project and how it is working out
-for them. Our highest priority is to make sure that they are happy with the
-work we produce.\\
+\section{The Original Technology Document}
+This is the Technology Document we wrote at the beginning of the project. It has been reformatted to match the styling
+of this document, but the content of the document has not been modified. The original document in its original
+formatting is included on the usb storage drive.
 
-Since our code is on our repository on-line, they have access to our project in
-its current state. They have two instances of an inventory system right now.
-One instance is their old inventory system. The other instance is our inventory
-system in its current state. Our client has asked his team to use both
-inventory systems when checking in and out items. This gives us a lot of
-feedback on how our system is working in the intended environment, and we are
-taking all of their feedback into consideration.\\
+\subsection{What We Are Trying to Accomplish}
+The PMA team at Intel is in need of a new inventory tracking system for their silicon and other items they need to
+store. They would like a web-based inventory system where engineers can check in and check out items. All the items
+tracked will need to be stored on a database. This database will need to track items and user settings. The application
+will also need to communicate with the Active Directory server at Intel for user verification. Every inventory item has
+a QR code that needs to be scanned when it is checked in or out. When an item is scanned, the inventory system will
+update the database accordingly.
 
-A lot of the feedback we get pertains to bug fixes. Some of the bugs are
-specific to their setup, and we would have never known about if they weren't
-actively using it. For instance, with their system they have their server and
-database running on separate machines. If the server has not made any requests
-in a specified amount of time, the database will close the connection with the
-server. They would have to restart the server in order to get the connection
-back with the database. On our development environment, we have the server and
-database running on the same machine, so there is never a connection issue
-between the two.\\
+\subsection{Cameras}
+\subsubsection{Standard CCTV camera}
+The first possible option for the facial recognition camera would be to use a standard CCTV camera, this has the
+benefit of offering a wide range of products at varying price points, as well as allowing usage of a large number of
+pre-existing facial recognition software’s. However, many of those software’s are costly, and are more limited than an
+algorithm based around the capabilities of the next two options. A CCTV camera on its own has limited functionality.
+\paragraph{Cost} Varies\\
 
-We are constantly receiving positive feedback from our client and his team.
-This has allowed us to make the best possible system that we can, and
-serve their inventory needs.
+\subsubsection{Intel RealSense Camera(F200)}
+The RealSense camera is Intel’s 3d camera designed for laptop and tablet integration. This Camera was designed to allow
+for gesture control, facial analysis, sound processing, and augmented reality. In terms of facial recognition, it has a
+range of 25-75cm. The camera has three display modes, Depth, IR, and RGB. The standalone developer version requires USB
+3.0, but the final product would make use of an integrated camera. It supports windows 8.1 and newer and requires a 4th
+generation (or later) Intel Core processor. This camera has depth precision fine enough to detect gender, emotion, and
+even the users pulse. The main drawback is the products relative newness, meaning its developer community is much
+smaller as compared to the other options.
+\paragraph{Cost} standalone dev kit: \$99.00\\
+
+\subsubsection{Kinect Sensor}
+The Kinect Sensor is another possible option for the facial recognition camera. This sensor, originally designed for
+Microsoft’s Xbox 360 and significantly improved upon with the release of the Xbox One provides much the same
+functionality as the RealSense camera. It is a depth sensing camera capable of multiple modes, Color and IR, with a
+stated range of 5 meters. It was designed with full motion body tracking in mind, though it is fully capable of
+performing facial recognition. At 50cm the quality would be ~.75 mm per pixel. Historically the Kinect Sensor has had
+issues recognizing individuals with dark skin, though Microsoft has blamed those results on lighting levels. The sensor
+is also designed with the Xbox as its primary usage, there was a dedicated windows version, but that was discontinued
+in favor of a simple adapter for the Xbox version. The Camera is USB powered and has a robust developer community.
+\paragraph{Cost} \$99.99 + \$49.99 adapter\\
+
+\subsubsection{Selection Criteria}
+The chosen camera must be able to output an image with enough detail to successfully recognize an individual. The
+output must be clear enough to differentiate between an image of a person and the actual person, and the Camera needs
+to be able to integrate with current systems already in place. Due to project criteria, and the specific request of the
+sponsor, the camera selected was the Intel RealSense Camera.
+
+\subsection{RFID Reader}
+
+\subsubsection{1126 Desktop UHF RFID Reader}
+This product is USB powered and offers both read and write capability for RFIC cards. It is specifically designed for
+PoS, document tracking, and access control applications and has an extensive SDK. It has the benefit of providing both
+audio and visual confirmation of a successful read and its built in antenna has a range of up to 1.5 meters,
+tag/environment dependent. It is designed as a desktop device and as such has no built in mounting bracket or the
+ability to add one. It works with Windows, Mac, and Linux and is a sturdy, drop resistant design.\\
+
+\subsubsection{ID CPR02.10-AD/-B RFID Card Reader}
+This is a wall mounted reader which requires an external power supply. It is unable to write cards and has two possible
+communications links. Serial (RS232 or RS485) or Data/Clock (Wiegand). It has a max read distance of 7cm and includes
+both visual and audio confirmation of a successful or unsuccessful read. It includes both the reader, and the wall-
+mounted housing. It functions with Windows, Mac, and Linux.\\
+
+
+\subsubsection{pcProx82 Series}
+This is a USB powered device which works with nearly all proximity, contactless, and magnetic stripe card technologies.
+It is designed to add additional functionality to already existing employee ID badges by integrating them into
+applications beyond simple door access. The main benefits of this technology are its versatility, ease of use, and the
+fact that it has no license restrictions. It is compatable with recent windows operating systems and is capable of
+sending data as serial ASCII or non-keystroke formats with an average maximum read range of 2.5-7.6cm. It includes a
+Tri-state LED and beeper for read confirmation and comes with a 1 year material/workmanship defect warranty.\\
+
+\subsubsection{Selection Criteria}
+The reader must be able to successfully read all relevant data from a standard Intel ID badge as well as integrate
+properly with a tablet PC. Due to project criteria, and the specific request of the sponsor, the RFID reader selected
+was the pcProx®82 Series RFID reader.
+
+\subsection{Database Management System}
+\subsubsection{MySQL}
+This is an open source relational Database Management System (DBM). It is one of the most widely known client-server
+DBM. One of the main benefits of MySQL is that it is already integrated into existing open source softwares such as
+WordPress and Drupal due to it being a part of the Linux Apache MySQL PHP (LAMP) package. Additionally, MySQL is
+supported on nearly every operating system and supports many programming languages. MySQL is known to be easy to setup
+and use and is the industry standard DBM. However, MySQL is known to have stability issues and suffers from poor
+performance scaling.\\
+
+\subsubsection{Microsoft SQL Server Express}
+This product is the free version of Microsoft’s SQL Server. The express version is open to distribute and use, similar
+to open source software. It implements many of the same features as MySQL but with a better query optimizer, the T-SQL
+procedural language, and a window-based management tool. However, due to being the express version, the DBM has some
+limitations. For example, there is a maximum size of 10 GB per database. Additionally, there are artificial hardware
+usage limits such as only one physical CPU and 1 GB of RAM can be used. Finally, SQL Server Express is limited to
+running only on Windows and supports only .Net, Java, PHP, Python, Ruby, and Visual Basic.\\
+
+\subsubsection{Oracle Database Express}
+Oracle is an object-relational database management system, meaning that it supports objects, classes, and inheritance
+directly in the query language. It is an express version and, like SQL Server Express, it has limitations set on data,
+allowing only 4 GB. Oracle Database is generally targeted at large enterprise applications for huge corporations. It is
+supported more operating systems and supports more languages than either MySQL or SQL Server.\\
+
+\subsubsection{Selection Criteria}
+Due to the nature of the project, licensing is very important. Therefore, MySQL is the clear answer due to it being
+open source. Additionally, since MySQL is inherently free, it does not have any artificial limitations imposed on it
+like the other options have. Microsoft SQL server and Oracle Database both lend themselves to large enterprise
+applications, whereas MySQL is generally used for smaller web applications. Finally, the team has much more experience
+with MySQL than the other two languages.
+
+\subsection{Web Application}
+\subsubsection{Node.js / Angular.js}
+Node.js is a javascript runtime engine that runs on Google’s V8 engine. We could use this as our web server. Node.js
+would handle any server-side functionality, and Angular.js would handle the client-side interface. Some of the
+advantages are that the system would be very scalable, testable, and reliable. Both Node and Angular are built for
+event-driven, non-blocking systems. This is particularly useful since we will have a number of I/O devices working with
+our application. It would also be able to run securely with SSL. There are a few downsides to these technologies as
+well. There is a learning curve that would be particularly larger since we would be learning two technologies at the
+same time.\\
+
+\subsubsection{Visual Studio Community} This is a free version of Visual Studio that we could use to create the web
+application. VS Community is a full IDE with everything we would need to create a fully interactive web environment.
+Building an ASP.NET application would be a good option because it is such a powerful framework. The back-end would be
+written in C\#, which is designed in a way to easily interact with databases, lists, string manipulation, and much
+more. It comes with Linq, which allows developers to create database queries, and sort through lists seamlessly. This
+is also a very large framework, and the learning curve is probably greater than any other option listed. There are also
+limitations to the licensing with the free version, so that also has to be kept in consideration.\\
+
+\subsubsection{Vanilla HTML/CSS/Javascript with PHP}
+A third option would be to go without a web framework, and use a more basic approach to developing the software. We
+would just write base web interfaces with HTML, CSS, and Javascript, and then use the server-side tool PHP, which is a
+more minimal scripting language. This would benefit us by giving us the freedom to come up with whatever design
+structure we want to use. We could essentially write the code in anyway that we feel would be best for the system
+without being imposed by framework rules and guidelines. On the other side of that argument is that we could have too
+much freedom and create a complex and chaotic system that is nearly impossible to understand, since we didn’t impose
+any coding standards. It would have a smaller learning curve at the beginning, but as the system grows it might not be
+the best option.\\
+
+\subsubsection{Selection Criteria}
+As stated in other sections, licensing is very important. All three of these systems are free, but Visual Studio
+Community will have some limitations that would deter us from using it. We also have to make sure that we can read
+information from I/O devices, such as the RFID reader and the camera. Node.js has the ability to work with I/O systems
+easily. It has the ability to run C and C++ libraries within the system, which is useful for the RFID readers and
+cameras. Angular.js easily integrates with Node.js and can create dynamic web pages.
+
+\section{Changes Since the Original Technology Document}
+Because of a large learning curve for software that wasn't necessary for development, we decided not to use Angular.js, a javascript web framework, for the interface. Instead, we used only HTML, CSS, and JavaScript/JQuery for our interface, without a framework.\\
+
+We had discovered that the SDK for the Intel RealSense Camera could not do facial recognition if the camera is being used through a web browser. Because of this, we switched to using Open Source Biometric Recognition (OpenBR), a runtime library for image processing.\\
+
+\section{Weekly Blog Posts}
+Throughout the course of the project, we wrote a weekly update on a blog post whenever there was work done on the project. Each blog post is in chronological order and styled in a way that makes it easy to differentiate between them.
+
+\subsection{Welcome to my blog! by Cronise, Joseph Eric}
+This is where I'll be sharing my thoughts on topics that matter to me. Who knows... I might even share pictures, videos and links to other interesting stuff.\\
+
+If I catch your interest, let me hear from you.
+
+\subsection{Weekly Update 10/23/2015 by Cronise, Joseph Eric}
+​This week we held our weekly meeting with Scott Oehrlein on monday. We went over his changes to the design document as well as clarified a few matters and asked any questions we needed.\\
+
+On tuesday we were given two Realsense cameras which were distributed to Dylan and Brett, Joseph has his own, albiet an older model. Each member took some time to briefly familiarize themselves with the camera.\\
+
+Over the entire week we, individually, have been looking into different web framework options for the project as well as refamiliarizing ourselves in database operations.
+
+\subsection{Weekly Update 10/30/2015 by Camus, Dylan Michael}
+Again this week we held our weekly meeting with Scott Oehrlein on monday. We didn't have too much to talk about but we discussed the requirements document and planned to meet with Scott in person on Wednesday November 4th.​\\
+
+We have continued looking at web frameworks and database options and are starting to get a much better handle on what the project will look like.
+
+\subsection{Weekly Update 11/6/2015 by Camus, Dylan Michael}
+​This week our weekly conference call with Scott was canceled because our client Scott Oehrlein was in Corvallis and we were able to meet with him in person. We went over the old web app that the Intel team currently uses and where he wanted to see improvements. We also received three RFID scanners from Scott to work with.\\
+
+​In addition, we had our first meeting with the TA this week. We went over our requirements document and where it needed improvement.
+
+\subsection{Weekly Update 11/13/2015 by Camus, Dylan Michael}
+We had a little trouble this week due to daylight savings time. We ended up missing our weekly meeting with Scott because Arizona does not recognize daylight savings time. Additionally, because of veterans day school was canceled, and therefore we did not meet with our TA either.\\
+
+What we did, however, was complete our revisions on the requirements document and finished the tech review. We are looking to begin working on​ our design document soon.
+
+\subsection{Weekly Update 11/27/2015 by Hayes, Brett}
+This week has consisted of a number of different tasks.\\
+
+We talked with Scott about a week ago about adding/deleting a few user stories from the requirements document. We have bounced ideas back and forth with our client and his needs for the system. We have a new revision of the document and hopefully we this version has everyone happy.\\
+
+We still haven't had success with the RFID cards and readers. The cards from our client are blank, and we are finding it difficult to find anyone with an RFID writer so we can put fake data on the cards. We tried the RFID readers with our student IDs but have not had any success with them.\\
+
+We prepared our elevator speech and are ready for our turn next week to give the speech. Brett is giving the intro, Dylan is giving the problem and Joseph will deliver the solution.\\
+
+We plan on working on the design document this weekend and will work hard on it in the beginning of next week.
+
+\subsection{Weekly Update 12/5/2015 by Hayes, Brett}
+We had a lists of concerns for this project. We placed our list of concerns into the design document and wrote about how we plan to address those concerns.\\
+
+Brett mapped out the high-level design and how data is going to flow throughout the system in a brief but informative way. He also went into detail about how the server will be constructed and some design features we will be implementing.​\\
+
+Joseph came up with some prototype designs for the interface. He was able to create a model of the system and what it will look like. Some screenshots of the mock-up are in the design document. Joseph also created a mapping diagram of the database.\\
+
+Dylan wrote an interface for the Active Directory API and how we will be working with the RFID reader, facial recognition, and username/password authentication. He also wrote how the barcode scanner will be used and implemented into our system.\\
+
+We spent most of the week on the design document. Aside from the document, we received the barcode scanner from Scott and were able to test out the scanner on some ​fake CPU silicon chips that Scott also provided.
+
+\subsection{Weekly Update 1/16 by Hayes, Brett}
+​The previous week was geared towards setting up our coding environments. This week we have been building the basic blocks of our product.\\
+
+Dylan continues to work on the database scripts. He is ​writing what will be the CREATE TABLE scripts.\\
+
+Joseph has been developing a skeleton of all the web pages for the project. The welcome screen has been placed on our webpage. It contains a simple username and password form.\\
+
+Brett has set up the database that the group will use to develop the project. It is connected with the hosted website that he put up online. He is also looking into methods of how to detect when a barcode scanner and an RFID reader will be hooked up to the kiosk.\\
+
+We had our weekly meeting with Scott on the 15th. We decided that next week we will be going over the design of the interface considering we get a few more pages online. Scott plans on visiting OSU in February, so we also discussed a good meeting time for when he is in town.
+
+\subsection{Weekly Update 1/29 by Hayes, Brett}
+Joseph has been working hard on the interface, and making it look aesthetically pleasing. He has been the primary person to work on the front-end coding. Joseph has also been working on figuring out what is needed for the RFID tags.\\
+
+Dylan has continued to work on the database scripts. After writing the scripts to create the tables for the database, he has been working on the stored procedures that will be called when creating an item, looking up an item, etc.\\
+
+​Brett has been working on the server-side code. He has been attempting to make the website secure through SSL security. Brett has also started looking into what it will take for an automated e-mailing system. He has begun the process of integrating OAuth authentication.\\
+
+After our weekly meeting with Scott, we have decided to rewrite the styling of the website. He was also able to send us some sample data after the meeting so that we can begin testing some of the scripts we have written.
+
+\subsection{Weekly Blog Post 2/5 by Hayes, Brett}
+Joseph has continued to work on the interface design. He has made a lot of progress and is now waiting for our client Scott to review.\\
+
+Dylan and Brett have been working together on the server-side code. They have made the server connect to the database and have the ability to pull data for display on the website. Brett has also made a table with multi-column filtering (one of the requirements).​\\
+
+The next steps are building a check in/out system, writing the midterm report, and recording a video for the midterm. Our hope is to get a somewhat polished version of our website before Scott arrives to Oregon on 2/17.
+
+\subsection{Weekly Update 2/12 by Camus, Dylan Michael}
+Our client Scott reviewed the updated interface design that Joseph created and was overall satisfied with the design. However, he has some concerns over the usability on smaller resolutions.\\
+
+Dylan and Brett continue to update the server code. They are working on getting the SSL working and adding functionality for adding items to the database through the application. Additionally, work is being done on the kiosk app to allow for checking items in and out.\\
+
+We finished our midterm report and video. Moving forward, we are looking to have the core functionality of adding items and checking items in and out ready for when scott comes on the 17th.
+
+\subsection{Weekly Blog Post 2/19 by Hayes, Brett}
+Scott came to visit from Arizona to see the progress we had made on the site. We actually came up with a lot of progress in the past week.\\
+
+We now have the kiosk inserted into our live site. If a user wants to view the kiosk, they will have to type in the navbar after the website \'/kiosk\'.\\
+
+A user is now able to scan an item when in the kiosk interface. If the user is on the login screen, they can scan an item and the information about the item is returned for viewing. The same code will be used for implementing the check in/out sytstem.\\
+
+In our meeting with Scott and his team (through Skype) we were able to show the current progress of our system. Scott and his team had some great feedback, and it was really good to hear what they had to say. We have a lot of details about their wants and needs in the system.​
+
+\subsection{Weekly Blog Post 2/26 by Hayes, Brett}
+Brett worked on server administration mostly. He moved the repository to a public repo on github. He also spent time writing the readme on the github page explaining how to deploy the app onto a local machine, or with little modification, to deploy to a server. The new repo can be found here: \\
+
+\url{https://github.com/bretterism/silicontracker​}\\
+
+Along with writing the directions and moving the repository, Brett was able to move the latest production environment to a home server. The reason for this was that our hosting space on OpenShift was handling a lot of the SSL security automatically, so we want to make sure that our app works specifically with SSL​ and implementing whatever we need for that.\\
+
+We also didn't have our weekly meeting with Scott. He had to cancel, and we all had previously decided to set another time to get together anyways. We are currently figuring out what time works best for everone.​
+
+\subsection{Weekly Blog Post 3/4 by Camus, Dylan Michael}
+​This week we worked on getting the last of the features that need to be in before the beta implemented. Brett set up the website on a home server and set up ssl security. He also set up the github repository for our migrated code and is working on updating the checkin/out system with user profiles.\\
+
+​Dylan updated the database to have a more efficient way to store which items are curretnly checked out. He also setup an email scheduler that sends emails over an interval. He is currently working on creating a SQL stored proceedure to only send emails to users who have had an item checked out for some length of time.\\
+
+Joseph has been working on the facial recognition authentication. He currently has it so that the web app will select the users web cam and display the feed on the login page. He has looked into implementing the facial recognition algorithm and has it almost finished pending more testing.\\
+
+Our meeting times with Scott have been rescheduled to 9:30 AM on Mondays.
+
+\subsection{Weekly Blog Post 3/11 by Hayes, Brett}
+This week we discussed a few of the features with Scott, and​ he responded with good feedback. We added a feature to add new attributes for the dropdown lists when adding a new item into the system. A dynamic table is loaded to create edit or delete these dropdown attributes whenever there is a change to be made.\\
+
+​We also added a user settings page, which lets the users change some basic features if they desire. This is where the dropdown attributes are found.\\
+
+Basically we have added a way for the user to login, and interact with the system as a user. We implemented sessions for user. Basically, the user's information is kept on the server and is passed to the client on a per-need basis. That way secure information, such as the user's WWID, can never reach the client, but their name and user settings can be reached.\\
+
+This next week we plan to go through our requirements document and make sure we have all the requirements fulfulled. We will be working hard on writing the document and will get together in the next few days in order to create our video for the final presentation.
+
+\subsection{Weekly Blog Post 4/8 by Hayes, Brett}
+Starting back into the term, we have worked very hard at refactoring a lot of our code. ​At the end of the winter term, we had pushed a lot of code, so our code got pretty messy. We refactored it over spring break and started the term off with a clean code-base.\\
+
+Part of the refactoring involved stripping the web template we were using for our web pages. The template did not look well on all screen sizes, so we stripped the template and have a responsive web site.\\
+
+We have derived a task list that covers all the code-related tasks for this term. Our task list can be found here:\\
+
+\url{https://docs.google.com/spreadsheets/d/1ue5x-tGK24JxzuKh7rXZGm6fWu7G3c6rAJPGCW_5Hcc/edit?usp=sharing}
+
+
+Brett has been working on a few major projects since the beginning of the term. He has created the ability for users to edit rows on a table, as well as write notes for each row. Brett has also worked on writing libraries for form scrubbing and validation. When someone enters a form, the data gets cleaned up and ensured that all the values are in acceptable format.\\
+
+Dylan has been working on the scrapping interface, so the users can logically delete items in the database.​\\
+
+Joseph has been hard at work on the facial recognition software and should hopefully have a working system implemented within the next few weeks.​
+
+\subsection{Weekly Blog Post 4/15 by Hayes, Brett}
+This week we have continued to work on our tasks and have been making our software more​ robust with less bugs. Brett has just about finished with validation and sanitization of the input forms. He has also been working on making sure all the tables on the web interface display nicely.\\
+
+​We have learned from our client that it may not be worth including the Intel logo in our work. This includes the poster and our project. So we are working on changing our poster and project to exclude the Intel logo. We are still allowed to use the word Intel in our work as long as it is used in the correct way.
+
+\subsection{Weekly Blog Post 5/9 by Hayes, Brett}
+We have forgotten the past few weeks to write a blog post, so this will be a larger post regarding what has been accomplished in the past few weeks.\\
+
+
+
+​​\paragraph*{April 16-​​23}
+
+We had a sanitizer validator for some of the tables, but not all of them. In this week we brought all of the tables currently in the system up to the same standard as the CPU table. The main reason why the other tables weren't at the same standard was because we were making constant changes to the structure of the tables, so once we came up with a solid standard for one table, we then made that standard for all tables.​ After getting all of the four tables in place, we added a fifth table for motherboards. These changes broght the tables into a finished state.\\
+
+\paragraph*{April 24-30}
+
+​We changed the way the system handled database connections. Instead of a single connection, we made a pool of connections so that people can make database requests concurrently. This speeds up the system by removing the bottleneck of the system. We had also began further development on the displaying of item information on the kiosk. If the user scanned an item on the kiosk login page, they would get an alert with the item's information. It was only considered a temporary solution, and it only displayed CPU information. So we made a nicer solution for displaying information, and a user can scan any type of item and get the information.​​​ Finally, when developing for the barcode scanning portion, we wrote a program that simulates a barcode scan. It's a command-line program that, when given a serial number, will behave in the same way as our barcode scanner and type in each character of the serial number at a very fast rate. This has helped significantly with development, and allows us to test our code that requires a barcode scanner without actually using the barcode scanner.\\
+
+\paragraph*{May 1-​7}
+
+​We added a few new pages to the website. They both pertain to scrapping, or logically deleting, of items. The first page is the scrapped items page. It looks pretty much identical to the main page with tables. The only difference between the two pages is that the main page shows active items, and the new page shows scrapped items. The other page that was added is the "mass scrap" page. This allows a user to scan all the items they wish to scrap, and then once they are done scanning, can submit and set all those items to scrapped.
+
+\subsection{Weekly Blog Post 5/15 by Hayes, Brett}
+We have been putting in a lot of effort this past week in preparation for expo. All of us have been working very hard at making sure everything is finished on our project.\\
+
+Brett has run through a number of bugs and features. He has fixed an issue with loging in from one interface and that session carrying over​ to the other interface. There is also a "quick" check in/out option on the kiosk login page. Admins can also edit the dropdown menus in the add item pages.\\
+
+Dylan has been working on adding reservations to the system, so if an item is already checked out, it can then be reserved by another user.\\
+
+Joseph is about done with the facial recognition, and should be up very soon. He has been having trouble with different SDKs and is finally about to have a working solution.\\
+
+We are almost prepared for expo. We just have to make sure that our system can run between our machines, instead of relying on the internet in Kelley, since the internet won't be very reliable​.
+
+\subsection{Weekly Blog Post 5/27 by Hayes, Brett}
+Due to expo being last Friday, we forgot to write our blog post last week. This blog post will contain the work accomplished within the past two weeks.\\
+
+The week leading up to expo was filled with writing a lot of code and trying to make sure that everything was working before expo. We had finished a lot of tasks and bugs including the reservation of items, and facial recognition. The night before expo we had to stay on campus through most of the night in order to finish the project and make sure it was ready. One of the reasons we were up so late was to make sure that our system would work without hiccups at expo. That included making sure that our two laptops were sharing a database, and that our website could work if we turned the internet off of our laptops. The other reason we were up so late is because we were working on getting facial recognition to work, and we had to work on it until the last minute. The Intel Realsense Camera was really difficult to work with, and it took a lot of hours to make sure that it worked correctly.\\
+
+The day of expo went very well. None of us had gotten much sleep, but we were all excited to show off our project and we all felt proud of our work. We ended up being between two projects that were both interesting to the general public. To our left was a virtual reality implementation, and to our right was an RC car controlled remotely. Despite our project not being quite as flashy, we still were able to show it off to a lot of people, including some people representing some of the local industries. Our client, Scott was in town for the expo and he seemed happy with the work that we had put into this project over the months.\\
+
+We haven't worked much after expo. There was a lecture on Wednesday and Kevin talked about the report and presentation. We have two weeks to finish both of these, but we will try to submit them sooner. This next week will be dedicated towards working on these, and after that, we will be finished with our capstone project.
 
 \section{Conclusion}
-
-Overall we are very close to having a final release on our
-project and will be ready for expo. We have been talking to our client quite
-frequently and he always has positive feedback on our progress. He seems to be
-happy with the progress we have made.\\
-
-We have implemented all the features in the project, and are now mainly working
-on bug fixes for the next few weeks. We intend to work very hard up until expo
-to make sure that we can hand over a product to our client that we can be proud
-of. This has been a tough year, but we have all learned so much from this
-project and feel very lucky to have such a great client.
-
-\clearpage
-
-
-\section{Include Images of Your Project}
-
-\begin{figure}[!ht]
-    \centering
-    \captionsetup{justification=centering}
-    \includegraphics[width=0.9\textwidth]{img-4.eps}
-    \caption{The CPU table.}
-\end{figure}
-
-\begin{figure}[!ht]
-    \centering
-    \captionsetup{justification=centering}
-    \includegraphics[width=0.9\textwidth]{img-3.eps}
-    \caption{Filtering table based on number of cores and external name.}
-\end{figure}
-
-\begin{figure}[!ht]
-    \centering
-    \captionsetup{justification=centering}
-    \includegraphics[width=0.9\textwidth]{img-2.eps}
-    \caption{The screen for adding a new CPU.}
-\end{figure}
-
-\begin{figure}[!ht]
-    \centering
-    \captionsetup{justification=centering}
-    \includegraphics[width=0.9\textwidth]{img-1.eps}
-    \caption{The kiosk cart screen, with some items to check out.}
-\end{figure}
-
-
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
-
-% \subsubsection{Subsubsection Heading Here}
-% Subsubsection text here.
-
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that the IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% the IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that the IEEE does not put floats in the very first column
-% - or typically anywhere on the first page for that matter. Also,
-% in-text middle ("here") positioning is typically not used, but it
-% is allowed and encouraged for Computer Society conferences (but
-% not Computer Society journals). Most IEEE journals/conferences use
-% top floats exclusively. 
-% Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the
-% \fnbelowfloat command of the stfloats package.
-
-
-
-
-% \section{Conclusion}
 % The conclusion goes here.
 
-
-
-
-
-% if have a single appendix:
-%\appendix[Proof of the Zonklar Equations]
-% or
-%\appendix  % for no appendix heading
-% do not use \section anymore after \appendix, only \section*
-% is possibly needed
-
-% use appendices with more than one appendix
-% then use \section to start each appendix
-% you must declare a \section before using any
-% \subsection or using \label (\appendices by itself
-% starts a section numbered zero.)
-%
-
-
-% \appendices
-% \section{Proof of the First Zonklar Equation}
-% Appendix one text goes here.
-
-% you can choose not to have a title for an appendix
-% if you want by leaving the argument blank
-% \section{}
-% Appendix two text goes here.
-
-
-% use section* for acknowledgment
-% \section*{Acknowledgment}
-
-
-% The authors would like to thank...
-
-
-% Can use something like this to put references on a page
-% by themselves when using endfloat and the captionsoff option.
 \ifCLASSOPTIONcaptionsoff
   \newpage
 \fi
 
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
-% \begin{thebibliography}{1}
-
-% \bibitem{IEEEhowto:kopka}
-% H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-%   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-% \end{thebibliography}
-
-% biography section
-% 
-% If you have an EPS/PDF photo (graphicx package needed) extra braces are
-% needed around the contents of the optional argument to biography to prevent
-% the LaTeX parser from getting confused when it sees the complicated
-% \includegraphics command within an optional argument. (You could create
-% your own custom macro containing the \includegraphics command to make things
-% simpler here.)
-%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
-% or if you just want to reserve a space for a photo:
-
-% \begin{IEEEbiography}{Michael Shell}
-% Biography text here.
-% \end{IEEEbiography}
-
-% if you will not have a photo at all:
-% \begin{IEEEbiographynophoto}{John Doe}
-% Biography text here.
-% \end{IEEEbiographynophoto}
-
-% insert where needed to balance the two columns on the last page with
-% biographies
-%\newpage
-
-% \begin{IEEEbiographynophoto}{Jane Doe}
-% Biography text here.
-% \end{IEEEbiographynophoto}
-
-% You can push biographies down or up by placing
-% a \vfill before or after them. The appropriate
-% use of \vfill depends on what kind of text is
-% on the last page and whether or not the columns
-% are being equalized.
-
-%\vfill
-
-% Can be used to pull up biographies so that the bottom of the last one
-% is flush with the other column.
-%\enlargethispage{-5in}
-
-
-
 % that's all folks
 \end{document}
-
-
