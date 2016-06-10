@@ -74,7 +74,7 @@
 }
 
 \lstset{
-   language=JavaScript,
+   % language=JavaScript,
    backgroundcolor=\color{lightgray},
    extendedchars=true,
    basicstyle=\footnotesize\ttfamily,
@@ -86,7 +86,6 @@
    tabsize=2,
    breaklines=true,
    showtabs=false,
-   captionpos=b
 }
 
 
@@ -117,6 +116,7 @@
 % make the title area
 \maketitle
 
+
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
@@ -126,15 +126,16 @@ in Chandler, AZ. The inventory system we have designed tracks the information an
 team and is made to help them to know where their high value inventory is at all times, as well as saving the team time
 and effort towards obtaining the items they need to get their work done. We have designed for them a system such that
 every time an engineer within their lab needs to use an item, they will need to check out the item through our system
-and check it back in when they are done. This ensures that highly sensitive materials don’t go missing without a log of
+and check it back in when they are done. This ensures that highly sensitive materials don't go missing without a log of
 who has had ownership of the item, as well as letting others know who currently is in ownership of the item.
 \end{abstract}
 
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
-\IEEEpeerreviewmaketitle
-
-
+% \IEEEpeerreviewmaketitle
+\clearpage
+\tableofcontents
+\clearpage
 
 \section{Introduction} 
 
@@ -142,7 +143,7 @@ who has had ownership of the item, as well as letting others know who currently 
 This project was requested by our client Scott, along with his team at Intel.
 
 \subsection{Why Was It Requested?}
-Scott’s team needs to keep inventory of all of their CPU silicon in their lab. These silicon pieces have no real identifiable marks other than a serial number. The members of Scott’s lab needed an easy way to retrieve information about the silicon. The other reason for this inventory system is to know who has which silicon. Each piece of silicon is considered very valuable to Intel, so they need a way to know who has taken silicon in order to do testing. They also want to know who has which silicon for their own team’s sake. They like to know if a certain piece of silicon is being used by another team member, and to know as soon as their teammate is done with it.
+Scott's team needs to keep inventory of all of their CPU silicon in their lab. These silicon pieces have no real identifiable marks other than a serial number. The members of Scott's lab needed an easy way to retrieve information about the silicon. The other reason for this inventory system is to know who has which silicon. Each piece of silicon is considered very valuable to Intel, so they need a way to know who has taken silicon in order to do testing. They also want to know who has which silicon for their own team's sake. They like to know if a certain piece of silicon is being used by another team member, and to know as soon as their teammate is done with it.
 
 \subsection{What Is Its Importance?}
 It is important for the team members to have an easy-to-use system that helps them do their work more efficiently than they could without it. It is meant to save them time, and get to the important parts of their work. This system is also important in preventing the loss of silicon, which could be very costly.
@@ -163,13 +164,7 @@ Dylan was in charge of the database. He worked on the design structure, and crea
 Joseph came up with the original design of the website, and was responsible for the research involved in facial recognition.
 
 \subsection{What Was the Role of the Client(s)? (I.e., Did They Supervise Only, or Did They Participate in Doing Development)}
-None of the members took on a specific role for the project. There were many tasks to the project, so everyone had to take on multiple roles, with much overlap between roles. The description of the roles provided will be about which member was the primary caretaker for that part of the project.\\
-
-Brett was responsible for the server-side implementation. He created the basic structure and maintained a lot of the server-side code. He was also responsible for a lot of the dynamic code running on the client. Brett also set-up a task list each term, to make sure the team was on track throughout the project.\\
-
-Dylan was in charge of the database. He worked on the design structure, and created many of the stored procedures used in the current system. He was also responsible for the emailing system, which included sending immediate emails and scheduled emails.\\
-
-Joseph came up with the original design of the website, and was responsible for the research involved in facial recognition.
+The client played a supervisor role, and he had his team manage the setup of our project into their environment. We tried to make sure that our project was simple to set up, and would work in different environments, since we do not have any knowledge of their environment. Our client's team also took care of most of the security of the project, since that is also knowledge-based and they are the only ones with access to that knowledge.
 
 
 \section{The Original Requirements Document}
@@ -215,17 +210,17 @@ immediately.\\
 \paragraph*{Req 5} Check in an item that was checked out of the system. The user returns the item so other people can check out the
 item.\\
 
-\paragraph*{Req 6} Check in multiple items in a single transaction. The current system doesn’t allow this feature. This would let the user
+\paragraph*{Req 6} Check in multiple items in a single transaction. The current system doesn't allow this feature. This would let the user
 check in multiple items without giving their credentials for every item.\\
 
-\paragraph*{Req 7} Check out multiple items in a single transaction. The current system doesn’t allow this feature. This would let the
+\paragraph*{Req 7} Check out multiple items in a single transaction. The current system doesn't allow this feature. This would let the
 user check out multiple items without giving their credentials for every item.\\
 
 \paragraph*{Req 8} Check in and check out multiple items in the same transaction. Along with the above two stories, the user should be
 able to both check in and out and only give their credentials once.\\
 
 \paragraph*{Req 9} Enter new items into the system. There should be a form that a user can fill out. They will scan the item to insert the
-item’s ID.\\
+item's ID.\\
 
 \paragraph*{Req 10} Retire old items in the system. They need to logically delete (scrap) items when an item is no longer being used. There
 should be a textbox to optionally give a reason for the item being retired.\\
@@ -271,7 +266,7 @@ with their current credentials.\\
 the project database, since we cannot modify the Active Directory server.\\
 
 \paragraph*{Req 23} When setting up facial recognition for a user, authenticate user with username and password, or with RFID tag first.
-This is for security reasons, so other people won’t try to scan their face on someone else’s profile. When checking in
+This is for security reasons, so other people won't try to scan their face on someone else's profile. When checking in
 or out item(s), the user should be able to authenticate with their current RFID tags using an RFID reader.\\
 
 \paragraph*{Req 24} When checking in or out item(s), the user should be able to authenticate with facial recognition.\\
@@ -311,10 +306,10 @@ the items.\\
 queue.\\
 
 \paragraph*{Req 37} Have users be notified via e-mail when they check in an item. This should happen for every transaction, so the user
-doesn’t get a separate e-mail for every item.\\
+doesn't get a separate e-mail for every item.\\
 
 \paragraph*{Req 38} Have users be notified via e-mail when they check out an item. This should happen for every transaction, so the user
-doesn’t get a separate e-mail for every item.\\
+doesn't get a separate e-mail for every item.\\
 
 \paragraph*{Req 39} Have users be notified when an item is now considered retired and they have the item currently checked out. They will
 need the e-mail so they know to return it immediately.\\
@@ -322,7 +317,7 @@ need the e-mail so they know to return it immediately.\\
 \subsection{The Interfaces...}
 \subsubsection{Main Interface}
 \paragraph*{Req 40} Will be a touch interface without need of keyboard. The keyboard will still be available for certain functions, such as
-entering a new item. The idea is that the user doesn’t have to use the keyboard for check-in and check-out
+entering a new item. The idea is that the user doesn't have to use the keyboard for check-in and check-out
 transactions.\\
 
 \paragraph*{Req 41} Will be able to check in items from this interface. This should not require a keyboard. The user should simply login to
@@ -409,19 +404,25 @@ only see the possible filters for cache size based on the items with the specifi
 			\hline
 			\# & Requirement & Reason For Changes & Comments \\ \hline
 			2 & Give a reason and a priority when queueing an item. This will create a priority queue for the users. If someone needs an item and it is important, they can give a reason why. & Our client stated that since they are a small team, they only needed an email stating that the item has been checked in. All the people can meet up and talk about who gets the item next. & \\ \hline
-			10 & Retire old items in the system. They need to logically delete (scrap) items when an item is no longer being used. There should be a textbox to optionally give a reason for the item being retired. & There is no textbox to give a reason for the item being scrapped. Each item has a notes field, and we decided that the best option was to place the reason for scrapping in the item’s notes field. & \\ \hline
+			10 & Retire old items in the system. They need to logically delete (scrap) items when an item is no longer being used. There should be a textbox to optionally give a reason for the item being retired. & There is no textbox to give a reason for the item being scrapped. Each item has a notes field, and we decided that the best option was to place the reason for scrapping in the item's notes field. & \\ \hline
 			13 & Be able to scan an item that is currently checked in to see who has the item reserved next. This will show the next person in line for the item. & We decided not to be concerned about this, because everyone who reserved an item will discuss in person who needs the item next. & \\ \hline
-			17 & If the item is scanned and the item is checked in, it will now be checked out by the user. If the item was already checked out, information about who currently has the item checked out will be displayed on the screen. & Our client asked if we could make it so one person can check in another’s item. & \\ \hline
+			17 & If the item is scanned and the item is checked in, it will now be checked out by the user. If the item was already checked out, information about who currently has the item checked out will be displayed on the screen. & Our client asked if we could make it so one person can check in another's item. & \\ \hline
 			19 & When the user is done, they will press a confirm button and will be shown a list of items they have checked in/out. The user can then proceed to commit their transaction to the database. & We made it so they only need to press one button to commit their transaction. A message appears now to just show what items they checked in/out, after they have committed. & \\ \hline
-			29 & Admins will have the ability to enable/disable any of the three authentication methods (username/password, RFID tag, or facial recognition). If for whatever reason the admin does not want one of these methods available, they can disable that method of authentication. & Our client’s team implemented RFID security, and the facial recognition was implemented very late in the development phase of the project, so we didn’t get a chance to implement this setting. & \\ \hline
+			29 & Admins will have the ability to enable/disable any of the three authentication methods (username/password, RFID tag, or facial recognition). If for whatever reason the admin does not want one of these methods available, they can disable that method of authentication. & Our client's team implemented RFID security, and the facial recognition was implemented very late in the development phase of the project, so we didn't get a chance to implement this setting. & \\ \hline
 			N/A & The Interfaces & In our original Requirements Document, we had four interfaces. After starting work on this project, we simplified the system down to two interfaces. It made the system easier to discuss and navigate. We boiled down the interfaces into the Web interface and the Kiosk interface. The Shopping Cart interface, Scrapping interface, and Reporting interface have mostly been combined into the Web interface. The Main Interface has mostly been reworked into the Kiosk interface. & All of the requirements within the Interfaces section have been fulfilled, but not necessarily in all of the interfaces specified. \\ \hline
 			44 \& 45 & Will be able to check in items from this interface. If they are at the kiosk they should have a way to check in items using this interface. Will be able to check out items from this interface. & Our client let us know that they only need to check in and check out items from one interface. Our original Requirements Document had checking in and out of items from two interfaces. We removed the Checking in and out requirements to allow for these features to happen in only one place. & \\ \hline
-			59 & Anybody can scan sample RFID cards to check in or out items. We will have sample items for them to scan, and they can use fake RFID badges to simulate the experience. & Our client’s team implemented the RFID readers, so we did not show how they worked at expo. & \\ \hline
+			59 & Anybody can scan sample RFID cards to check in or out items. We will have sample items for them to scan, and they can use fake RFID badges to simulate the experience. & Our client's team implemented the RFID readers, so we did not show how they worked at expo. & \\ \hline
 			N/A & New Requirement: Sanitizing and Validation User Input & We did not place in our original document to clean up any user input and make sure that their input is valid. It was an important feature, and our client did ask that we created a system where data entered would be consistent. & \\ \hline
 			N/A & New Requirement: Editing Dropdown Menu Items & We setup a page for the admins to change the dropdown menu items. These dropdowns are found when inserting or editing an item. Our client liked the idea of not having to make edits directly in the database, so we implemented this feature. & \\ \hline
 			N/A & New Requirement: Quick Check in/out. & We added an extra feature for when a user scans an item to get the item's information, they can click a Check In/Out button to save the item for later. It makes it easier for the user to check in or out an item as soon as they scan it, and makes the workflow a little smoother. & Our client's team received this feature very well and were thankful to have it. \\ \hline
 		\end{longtabu}
 \end{center}
+
+\subsubsection{The New Gantt Chart}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{newgantt}
+\end{figure}
+\clearpage
 
 \section{The Original Design Document}
 
@@ -432,17 +433,17 @@ original document is also included on our USB storage drive.
 \includepdf[pages={-}]{CS461_Group03_Design_Document}
 
 \section {Changes Since the Original Design Document}
-We have changed the design of the high-level architecture. When we first started designing the project, we weren’t sure on how the scanner would work. We had thought that we would have to design a separate component for the scanner to handle events and sent barcode information to the server. After playing with the scanner, we learned of its behavior and was able to handle the barcode scan as an event inside the Interface component. The scanner simulates a keyboard and presses a key for each character of the barcode it just scanned. We were able to systematically determine when a barcode was scanned and when a human was typing on the keyboard, thus having no need to separate the scanner into its own component.\\
+We have changed the design of the high-level architecture. When we first started designing the project, we weren't sure on how the scanner would work. We had thought that we would have to design a separate component for the scanner to handle events and sent barcode information to the server. After playing with the scanner, we learned of its behavior and was able to handle the barcode scan as an event inside the Interface component. The scanner simulates a keyboard and presses a key for each character of the barcode it just scanned. We were able to systematically determine when a barcode was scanned and when a human was typing on the keyboard, thus having no need to separate the scanner into its own component.\\
 
 Along with the scanner being a part of the Interface component, we also moved the Authentication component into the Interface component. We basically created only a single component that the user can have direct access to. This created a much simpler design and made it easier to develop, since there were less components all needing to communicate with the server.\\
 
-We had originally thought we would need to create a system that authenticates users based off  an Active Directory server. After creating this document, we found out that the system would need to just send a web request to authenticate. We weren’t told any more information, since that would be a security breach. We ended up creating a mock authentication system and we let our client’s team handle the security from there.\\
+We had originally thought we would need to create a system that authenticates users based off  an Active Directory server. After creating this document, we found out that the system would need to just send a web request to authenticate. We weren't told any more information, since that would be a security breach. We ended up creating a mock authentication system and we let our client's team handle the security from there.\\
 
 In the Interface component, we had split the design work into two subcomponents. These subcomponents are the the Web interface and the Kiosk interface. The Web interface is for monitoring and viewing large sets of information, adding, editing, or removing items, etc. It is designed to be used for any work that would be easier to use a computer with keyboard and mouse. The Kiosk interface is designed in a way to be touch friendly, and to handle quick transactions, such as the checking in and out of the silicon chips.\\
 
 The database schema has changed since the original design. We originally had a table for each type of item. Today we still have those item type tables, but we have a more generic table that specifies what the item type is, and references data in the more specific tables. The generic table, “Items”, holds the barcode, the notes for the item, if the item is checked in, and if the item has been scrapped, or logically deleted.\\
 
-After a large amount of research and help from mentors, we had discovered that the SDK for the Intel RealSense Camera was not compatible with facial recognition on a web browser. This meant that we couldn’t use the facial recognition software that was designed for this camera. We had to instead take two images using the RealSense camera. The camera takes an RGB image and a depth image, and uses Open Source Biometric Recognition (OpenBR), a runtime library for image processing, to do facial recognition on the RGB photo and an image comparison for the depth image.\\
+After a large amount of research and help from mentors, we had discovered that the SDK for the Intel RealSense Camera was not compatible with facial recognition on a web browser. This meant that we couldn't use the facial recognition software that was designed for this camera. We had to instead take two images using the RealSense camera. The camera takes an RGB image and a depth image, and uses Open Source Biometric Recognition (OpenBR), a runtime library for image processing, to do facial recognition on the RGB photo and an image comparison for the depth image.\\
 
 \section{The Original Technology Document}
 This is the Technology Document we wrote at the beginning of the project. It has been reformatted to match the styling
@@ -461,12 +462,12 @@ update the database accordingly.
 \subsubsection{Standard CCTV camera}
 The first possible option for the facial recognition camera would be to use a standard CCTV camera, this has the
 benefit of offering a wide range of products at varying price points, as well as allowing usage of a large number of
-pre-existing facial recognition software’s. However, many of those software’s are costly, and are more limited than an
+pre-existing facial recognition software's. However, many of those software's are costly, and are more limited than an
 algorithm based around the capabilities of the next two options. A CCTV camera on its own has limited functionality.
 \paragraph{Cost} Varies\\
 
 \subsubsection{Intel RealSense Camera(F200)}
-The RealSense camera is Intel’s 3d camera designed for laptop and tablet integration. This Camera was designed to allow
+The RealSense camera is Intel's 3d camera designed for laptop and tablet integration. This Camera was designed to allow
 for gesture control, facial analysis, sound processing, and augmented reality. In terms of facial recognition, it has a
 range of 25-75cm. The camera has three display modes, Depth, IR, and RGB. The standalone developer version requires USB
 3.0, but the final product would make use of an integrated camera. It supports windows 8.1 and newer and requires a 4th
@@ -477,7 +478,7 @@ smaller as compared to the other options.
 
 \subsubsection{Kinect Sensor}
 The Kinect Sensor is another possible option for the facial recognition camera. This sensor, originally designed for
-Microsoft’s Xbox 360 and significantly improved upon with the release of the Xbox One provides much the same
+Microsoft's Xbox 360 and significantly improved upon with the release of the Xbox One provides much the same
 functionality as the RealSense camera. It is a depth sensing camera capable of multiple modes, Color and IR, with a
 stated range of 5 meters. It was designed with full motion body tracking in mind, though it is fully capable of
 performing facial recognition. At 50cm the quality would be ~.75 mm per pixel. Historically the Kinect Sensor has had
@@ -531,7 +532,7 @@ and use and is the industry standard DBM. However, MySQL is known to have stabil
 performance scaling.\\
 
 \subsubsection{Microsoft SQL Server Express}
-This product is the free version of Microsoft’s SQL Server. The express version is open to distribute and use, similar
+This product is the free version of Microsoft's SQL Server. The express version is open to distribute and use, similar
 to open source software. It implements many of the same features as MySQL but with a better query optimizer, the T-SQL
 procedural language, and a window-based management tool. However, due to being the express version, the DBM has some
 limitations. For example, there is a maximum size of 10 GB per database. Additionally, there are artificial hardware
@@ -553,7 +554,7 @@ with MySQL than the other two languages.
 
 \subsection{Web Application}
 \subsubsection{Node.js / Angular.js}
-Node.js is a javascript runtime engine that runs on Google’s V8 engine. We could use this as our web server. Node.js
+Node.js is a javascript runtime engine that runs on Google's V8 engine. We could use this as our web server. Node.js
 would handle any server-side functionality, and Angular.js would handle the client-side interface. Some of the
 advantages are that the system would be very scalable, testable, and reliable. Both Node and Angular are built for
 event-driven, non-blocking systems. This is particularly useful since we will have a number of I/O devices working with
@@ -575,7 +576,7 @@ would just write base web interfaces with HTML, CSS, and Javascript, and then us
 more minimal scripting language. This would benefit us by giving us the freedom to come up with whatever design
 structure we want to use. We could essentially write the code in anyway that we feel would be best for the system
 without being imposed by framework rules and guidelines. On the other side of that argument is that we could have too
-much freedom and create a complex and chaotic system that is nearly impossible to understand, since we didn’t impose
+much freedom and create a complex and chaotic system that is nearly impossible to understand, since we didn't impose
 any coding standards. It would have a smaller learning curve at the beginning, but as the system grows it might not be
 the best option.\\
 
@@ -680,7 +681,7 @@ We finished our midterm report and video. Moving forward, we are looking to have
 \subsection{Weekly Blog Post 2/19 by Hayes, Brett}
 Scott came to visit from Arizona to see the progress we had made on the site. We actually came up with a lot of progress in the past week.\\
 
-We now have the kiosk inserted into our live site. If a user wants to view the kiosk, they will have to type in the navbar after the website \'/kiosk\'.\\
+We now have the kiosk inserted into our live site. If a user wants to view the kiosk, they will have to type in the navbar after the website '/kiosk'.\\
 
 A user is now able to scan an item when in the kiosk interface. If the user is on the login screen, they can scan an item and the information about the item is returned for viewing. The same code will be used for implementing the check in/out sytstem.\\
 
@@ -771,7 +772,343 @@ The day of expo went very well. None of us had gotten much sleep, but we were al
 
 We haven't worked much after expo. There was a lecture on Wednesday and Kevin talked about the report and presentation. We have two weeks to finish both of these, but we will try to submit them sooner. This next week will be dedicated towards working on these, and after that, we will be finished with our capstone project.
 
-\section{Conclusion}
+\section{Project Documentation} 
+
+\subsection{How Does Your Project Work?} 
+The project is broken into two interfaces.
+These are the kiosk, which is used for the checking in and checking out of items, and the web interface, which is used
+for visualizing the data. The kiosk should only be run on one machine. At Intel, they have a physical kiosk station
+where they will run the kiosk interface from. The web interface can be accessed from any personal device.\\
+
+The kiosk interface is made up of two pages. The first is the kiosk login page. This page contains the login methods
+that our system supports. These are username and password combinations and facial recognition. The team at Intel has
+added a third option, which is RFID authentication. The kiosk login page also provides functionality to look up
+information of a particular item by scanning that items serial number. When scanning an item with the barcode scanner,
+it will detect the input regardless of where the cursor is currently. The information will be displayed on the right
+hand side, along with a button to save that item for checkout upon the next login. This saved for later storage is
+periodically cleared every 30 seconds to prevent unwanted items from being added to the cart in the case that someone
+saves an item for later but opts not to login. Finally, the last portion of the kiosk login page is the facial
+recognition interface. Users who have previously setup facial recognition will see their names in the table below the
+username and password fields. They can select their name and press the facial recognition button to attempt to login
+through facial recognition. It is important to look directly at the camera during the facial recognition process.\\
+
+Once the user is authenticated, they will be introduced to the cart page. This page contains two tables, one for items
+to be checked in and one for items to be checked out. Items are scanned into the tables by scanning the item's barcode
+with the serial number scanner. Similar to the login page, the cursor's location is not important when scanning a
+barcode. After all items are scanned, simply pressing the submit button will complete the transaction.\\
+
+The web interface, on the other hand, has many more pages. The first page a user will be greeted with upon entering the
+URL is the homepage. This page contains tables which list every item currently in the database. The different tables can
+be accessed by clicking on their corresponding tabs. Items can be searched in the table using a multi-column search. For
+example, one can search for all 4 core CPUs that also have a frequency of 2.5. Each entry in the table also has a button
+for adding notes. Clicking on the button creates a dropdown field for entering the note. If the user is logged in the
+admin privileges, each entry in the table will have yet another button. This button is for editing the items fields.
+Clicking on the button causes a modal to appear which contains a form filled with all of the items current values. Items
+can also be scrapped, or logically deleted, from this form.\\
+
+The next page of the web interface is the add items pages. Clicking on the add items button in the navbar brings down a
+list of possible items that can be added to the database. Each add item page contains a form for adding the items. The
+forms are set up to sanitize and validate the data to make sure it is consistent and correct. Attempting to add an item
+incorrectly will produce an error below the field and the item will not be added to the database.\\
+
+The next button on the navbar will bring the user to the reserve items page. This page is only accessible if the user is
+logged in. The page is similar to the homepage, except the table is only populated with items that are available for
+reservation. An item is only available for reservation if another user currently has that item checked out. A user may
+click on a third new button in an entry of the table to reserve the item. Once the item is reserved, the button will
+change to a different icon, and clicking the button again will inform the user when that item was reserved by them. Once
+the reserved item has been checked back in, that user will receive an email informing them that the item is now
+available for checkout.\\
+
+The second to last button on the navbar will bring the user to the mass scrap page. This page is only accessible from
+users with admin privileges. This page is used for quickly scrapping a large quantity of items. Items are scanned into
+the table just like the cart page on the kiosk. Once the user has finished scanning the items he wishes to scrap, he/she
+must only press the submit button to scrap each item at the same time.\\
+
+The final page of the web interface is the view scrapped page. This page also requires admin privileges. This page is
+for viewing the retired items that are no longer in use. It also is useful if an item has been scrapped by mistake,
+since the item can be found this table and un-scrapped by clicking the the edit item button.
+
+\subsection{How Does One Install the Project?}
+NOTE: We developed our project on Ubuntu, and our instructions are written assuming you are at least using a Debian version of Linux.\\
+
+Our project is running on a Node.js server. Node.js can be downloaded from their website: https://nodejs.org. There is also a bash script in the root directory of our project to easily download and install node. Look for nodeinstall.sh. The latest version of Node should be fine. It will work with the stable or bleeding-edge version of Node.js.\\
+
+After installing Node.js, navigate to the root folder and in the terminal type npm install. This will install any dependencies our program depends on. We use npm for all our packages. It comes installed with Node.js. For more information on npm, visit their website: https://www.npmjs.com/.\\
+
+Our server uses a MySQL database. This can be installed either through a package manager with the command “sudo apt-get install mysql-server” if your using a debian distrobution of Linux, or directly from the binary on their website: https://www.mysql.com/downloads/. We use the MySQL Community Edition.\\
+
+Facial recognition is done using OpenBR which needs to be installed on the server prior to facial recognition working. From the server, open a terminal window and type these commands:
+
+\begin{lstlisting}[language=bash,title={Install GCC4.9.2}]
+  sudo apt-get update
+  sudo apt-get install build-essential
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=bash,title={Install CMAKE3.0.2}]
+  sudo apt-get install cmake cmake-curses-gui
+\end{lstlisting}
+
+download OpenCV 2.4.11 from:\\
+\url{https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.11/opencv-2.4.11.zip/download}\\
+After downloading, unzip opencv-2.4.11.zip
+\begin{lstlisting}[language=bash,title={Download and Install OpenCV2.4.11}]
+cd opencv-2.4.11
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make -j4
+sudo make install
+cd ../..
+rm -rf opencv-2.4.11*
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash,title={Install QT5.4.1}]
+sudo apt-get install qt5-default libqt5svg5-dev qtcreator
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash,title={Get OpenBR}]
+git clone https://github.com/biometrics/openbr.git
+cd openbr
+git checkout v1.1.0
+git submodule init
+git submodule update
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash,title={Build OpenBR}]
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make -j4 NOTE: for faster install use more threads.
+sudo make install
+\end{lstlisting}
+
+At this point you need to open the Qt Creator IDE using the command 'qtcreator \&' NOTE: this requires a gui interface to be installed on the server. this is NOT a command line utility, however once OpenBR is installed the gui is no longer required. The gui we used was Ubuntu Desktop. This can be installed via package manager. In our case, this was "sudo apt-get install ubuntu-desktop".\\
+From the Qt Creator "File" menu select "Open File or Project...".\\
+Browse to your pre-existing build directory "openbr/build" then select "Next".\\
+Select "Run CMake" then "Finish".\\
+OpenBR should now be installed on the server and facial recognition should be functional.
+
+\subsection{How Does One Run the Program?}
+There are two main interfaces to the app.\\
+\begin{enumerate}
+  \item The web interface
+  \item The kiosk interface.
+\end{enumerate}
+The web interface can be found at the base url. To use the kiosk interface you must navigate to the /kiosk page. For example: the kiosk interface looks like: \url{silicontracker.xyz/kiosk}\\
+
+We also have a second app that we have created to mock the credential login system at Intel. It's a very simplified version of their credential system (It's not actually how Intel deals with security. Our code is more of a placeholder). You will need to run this app if you plan on logging in as a user. open up a separate terminal window and go to the cred/ folder. There you will see a single file cred.js. Run this app with node cred.js.\\
+
+The node.js app uses environment variables, and they are not included on the repo (no need for the world to know my passwords). In order to make the environment variables work, you must create a new file in the root directory called env.js.
+The file should look like the following, with your own settings to replace the ones here:
+
+\lstinputlisting[language=JavaScript,title=env.js]{code/env.js}
+
+There are three things needed to get the database up and running:\\
+\begin{enumerate}
+  \item Creating the database
+  \item Creating a user for the database
+  \item Populating the database
+\end{enumerate}
+
+All of the database scripts we use are in the dbscripts folder. In a terminal window, navigate to that folder and login to your MySql client as root or as someone with sufficient privileges:
+\begin{lstlisting}[language=bash]
+mysql -u root -p
+\end{lstlisting}
+
+After logging in, the first step is to create the database:
+
+\begin{lstlisting}[language=bash]
+mysql> CREATE DATABASE tracker;
+\end{lstlisting}
+
+We called the database 'tracker' but you can rename it if you like. Just remember what you decided to call it. After creating, make sure to select the right database:
+\begin{lstlisting}[language=bash]
+mysql> USE tracker;
+\end{lstlisting}
+
+Once the database is created, we need a user with the right privileges to be in charge of the database.
+\begin{lstlisting}[language=bash]
+mysql> CREATE USER 'tracker_user'@'localhost' IDENTIFIED BY 'SomePassword';
+\end{lstlisting}
+
+You can change the name of the user if you like, but just remember what you named it.
+Next, we have to populate our newly-created database. The create scripts for the tables and stored procedures, as well as insert scripts for our sample data are in the script tracker.sql located in the dbscripts folder. We will be executing this script:
+\begin{lstlisting}[language=bash]
+mysql> \. tracker.sql;
+\end{lstlisting}
+
+We will need to add a few permissions to our new user. It needs to select, update, and insert into the tables as well as execute stored procedures. This user will never be deleting rows, so it doesn't get that privilege.
+
+\begin{lstlisting}[language=bash]
+mysql> GRANT SELECT ON tracker.* TO 'tracker_user'@'localhost';
+mysql> GRANT INSERT ON tracker.* TO 'tracker_user'@'localhost';
+mysql> GRANT UPDATE ON tracker.* TO 'tracker_user'@'localhost';
+mysql> GRANT EXECUTE ON tracker.* TO 'tracker_user'@'localhost';
+mysql> GRANT DELETE ON tracker.Checkout TO 'tracker_user'@'localhost';
+mysql> FLUSH PRIVILEGES;
+\end{lstlisting}
+
+At this point, we should have our database completely set up.
+After setting up the server and downloading the dependencies, you should be able to start it up with npm start. Make sure you are in the root folder for the project before you run that command. You should be greeted with a message: 'Silicon Tracker Server listening at <ip address>:<port>'. In your browser, navigate to that ip address. Don't forget the port! At this point you should be greeted with the Silicon Tracker website.
+
+\subsection{Are There Any Special Hardware, OS, or Runtime Requirements to Run Your Project?}
+There are not many specific requirements for the project, however there are a few. Facial recognition requires the Intel Realsense camera as it needs both the RGB and Depth cameras to function. Since the client side portions of the project are web based they will work with most any OS with a gui interface, though due to an issue in Linux where device names are truncated, it works better in Windows. For an unknown reason the web portions of this project do not function when using the Edge internet browser, but they work correctly in Firefox and Chrome.\\
+
+The server side code was designed with a linux server in mind, and the code would require modification to work on a Windows server. The installation instructions and facial recognition script were also designed under the assumption that the server would be running Linux. The specific facial recognition algorithm used has a different set of installation and usage instructions for Windows and will not function as is on a non Linux server. 
+
+\section{How Did You Learn New Technology?}
+\subsection{What websites were helpful? (Listed in order of helpfulness.)}
+There were many helpful websites used during this project. Ranked in order of helpfulness they would be:
+\begin{enumerate}
+  \item Stack Overflow
+  \item Github
+  \item Datatables.net
+  \item Intel.com
+\end{enumerate}
+
+\subsection{What, If Any, Reference Books Really Helped?}
+Only one book was used during this project as the majority of our information came from online, the book was Javascript: the Good Parts by Douglas Crockford, which was, as the title suggests, used when working with JavaScript for the server.
+
+\subsection{Were There Any People on Campus That Were Really Helpful?}
+There were two people who were helpful in completing the project. Professor McGrath and our client, Scott Oehrlein, both provided a great deal of help and suggestions for numerous parts of the project, but most of the help came when dealing with facial recognition and the Realsense SDK.
+
+\section{What Did You Learn From This? (Dylan Camus)}
+\subsection{What Technical Information Did You Learn?}
+I felt like I learned an enormous amount of technical knowledge over the course of this project. Coming into the project in the Fall I had very little web development experience. The only website I had ever built was a very simple checkout system using php for my intro to databases class.\\
+
+The first major technology I learned was Javascript. Our project was written almost entirely in Javascript, and starting out I had almost no knowledge of Javascript. I learned how to write asynchronous code using callbacks, which our application made extensive use of. I learned how to structure a client server application in a model view controller format. I learned about the REST api and how to build a dynamic web application. I learned how to use tools like JQuery and Bootstrap to increase my productivity. I learned how to use git in a real project environment with a production branch and a development branch.
+
+\subsection{What Non-Technical Information Did You Learn?}
+I learned a lot about client interaction. We spoke over the phone with our client every week to talk about how the project was coming along. We also had a conference meeting with our client's coworkers about features that they liked, didn't like, and would like to see implemented. I also learned how to edit videos.
+
+\subsection{What Have You Learned About Project Work?}
+I learned that project work really helps productivity. I found that I would work much better when the entire team got together to work on the project at the same time because I could work out any difficulties I was having with the team. I also learned that working in a group is very helpful because of the diverse skillset each member brings to the table. Both of my group members possessed skills that I myself did not and it was useful to learn from them.
+
+\subsection{What Have You Learned About Project Management?}
+I learned that proper documentation is important. I felt that the first term was helpful because it gave me a good feel for the rest of the project. I also learned that keeping in contact with the client is extremely important for project management. Our client was very helpful at identifying bugs and giving feedback on the interface design.
+
+\subsection{What Have You Learned About Working in Teams?}
+I learned the importance of communication within a group. It is important to split up the work and make sure that everyone knows their own duties. There were times two people were working on the same task and productivity was wasted. It is also important to communicate to make sure everyone is on the same page and knows the direction we are going in. I learned that it is important to get the group's opinion before moving in a different direction.
+
+\subsection{If You Could Do It All over, What Would You Do Differently?}
+I would have put a greater emphasis on the facial recognition portion of the project. We did not value the facial recognition as all that important for most of the project and considered it as a cuttable feature. However, facial recognition was a required part of the project. By putting it off, we caused ourselves a lot of unnecessary stress when we scrambled to get the facial recognition portion of the project working.
+
+
+\section{What Did You Learn From This? (Brett Hayes)}
+\subsection{What Technical Information Did You Learn?}
+I learned a lot about system architecture and how components can be separate and interact with each other. Along with architecture, I felt like I got real experience on workflow, and making sure everything works as one cohesive entity. I learned to think about how changing one part of the system can affect other parts. This is especially true with an event-driven system, such as this one. Along with being event-driven, our system is completely asynchronous. It was a challenge learning how to think asynchronously, and to make sure everything works even if executed out of order.
+
+\subsection{What Non-Technical Information Did You Learn?}
+I learned a great deal about customer relations. We had a great client, and he was very knowledgeable in technology, so I felt we were lucky in that aspect. However as with any client, he didn't know exactly what he wanted from the project. He knew what core components he wanted to see in the system, but it took a lot of trying new things and seeing if our client liked the work we did or not. He also knew how the system was going to be used in production, so we had to rely on him for feedback in those areas. Overall, I learned much about how to effectively communicate ideas and software with a client.
+
+\subsection{What Have You Learned About Project Work?}
+There were times when the project was near completion, and I realized that we should have taken another design or chosen another piece of technology for a component in the system. I feel like it is okay to come up with these discoveries. I wouldn't have known that our choice in technology wasn't ideal until it was too late anyways. With that, I've also learned that code can be messy, and it's not always an option to go back and refactor the entire project.
+
+\subsection{What Have You Learned About Project Management?}
+I have learned that task lists and organization are key practices. Over the winter we didn't keep a strong task list and we stressed about how much work needed to be done. At the beginning of the spring, I came up with a task list for everything that needed to be done in order to push the software to production. We tracked requirements, user stories, task assignments, the status of the task, and estimated hours. It took out a lot of guessing to how much work was left to finish the project.
+
+\subsection{What Have You Learned About Working in Teams?}
+I have learned that communication is a big factor. It really helps when each member of a team communicates what task they are currently working on, and where they are on the project. This can lead to receiving help if one of the members is stuck, and making sure that two people aren't trying to accomplish the same task.
+
+\subsection{If You Could Do It All over, What Would You Do Differently?}
+There was some additional work that the client requested but wasn't in the original requirements document. If I could go back and do it all over, I would have made sure that the work in the requirements document was completed first before attempting any additional work. We ended up completing everything, so it all worked out in the end, but it did add a lot of stress and hours to the project.
+
+
+\section{What Did You Learn From This? (Joseph Cronise)}
+\subsection{What Technical Information Did You Learn?}
+I learned a lot of technical information during the course of this project, ranging from new languages to new APIs. While, in the end, the project did not make use of the RealSense SDK, I learned a great deal about it while I was trying to make it work for our project. This also led me to learning C\# as many of the Realsense samples were implemented in C\# and the SDK had complete functionality with that language. I also expanded my understanding of javascript, previously I had only used it for websites, but during the project I had to use it to write server side scripts for the facial recognition system. I also learned how to work with bootstrap and the datatables API for the website as well as how to integrate webcams with a website.
+
+\subsection{What Non-Technical Information Did You Learn?}
+During this project I learned a lot about what I think of as real world coding. Instead of the specific instructions you get when taking a class, you are instead given a goal and, with some exceptions, it is left up to you as to how to reach that goal. Working with an actual client gave me a greater understanding of it works to create a real product that is going to be used, and it also gave me an understanding of just how easy it is for feature creep to occur.
+
+\subsection{What Have You Learned About Project Work?}
+During this project I learned a lot about project work and how it differs from the typical assignments given out in classes. I learned how easily project creep can occur, and how important it is to keep a clear set of goals from project start to finish. This project helped to give me a sense of how coding in a work environment might go and how multiple people can work together on different parts of a larger project and still work to create a cohesive project without stepping all over each others code in the process.
+
+\subsection{What Have You Learned About Project Management?}
+I wouldn't say that I learned a lot of new information about project management during this project. Coming from a business background I had already taken many of the project management courses and new a lot about what to expect going into a project of this nature. That said, I did learn just how important it is to keep a task list and keep it updated, and attempting to create the gantt chart for this paper taught me the importance of keeping clear records of who did what task, when they started, and when they finished.
+
+\subsection{What Have You Learned About Working in Teams?}
+By working as part of a team, I feel that we were able to create a product far better than anything each of us could have created individually. I learned that, by working as a team, we were able to leverage each person's individual skills and help everyone on their tasks as needed. Even something as simple as being able to bounce ideas off my teammates was incredibly helpful when it came to completing my tasks, and I would not have been able to implement the facial recognition system as well as it was without the help of my team.
+
+\subsection{If You Could Do It All over, What Would You Do Differently?}
+If I was starting over from scratch I would do a few things differently. I would have done much more research into the RealSense's capabilities earlier in the project cycle. This would have spared me a great deal of headache when it came time to make use of the SDK to write the facial recognition code, only to realise that the SDK has only partial javascript support, and no support for running its algorithms server side while the camera is client side. I would have written our kiosk in C\# and made it an executable instead of creating it as a web interface. Had I done this I would have been able to make use of most of the RealSenses SDK, however I would have still had to implement my own database for it as the two functions required to save and load the recognition database within the SDk are non functioning.
+
+\section{Appendix 1: Essential Code Listings}
+App.js is the main entry point into the server. It is responsible for the main setup of the system, and it calls other files to help with the setup.
+
+\lstinputlisting[language=JavaScript,title=app.js]{code/app.js}
+
+Since we implemented our system to use the REST Api, we have many routes setup for different functionalites. For example, this route gets all the CPU silicon that has not been scrapped. It returns JSON back to the client, so the client can display the information in a table.
+
+\lstinputlisting[language=JavaScript,firstline=63,lastline=98,title=data.js]{code/data.js}
+
+As long as there is a need to talk to the server, there is a route that handles it. Here we can see some more basic routes that handle adding and updating items.
+
+\lstinputlisting[language=JavaScript,firstline=114,lastline=131,title=web.js]{code/web.js}
+\lstinputlisting[language=JavaScript,firstline=216,lastline=235]{code/web.js}
+
+If the user wants to login to our system, they will need to go through this route. Note that this is an authentication system that we created, and will look differently for Intel and their security system.
+
+\lstinputlisting[language=JavaScript,firstline=514,lastline=602,title=web.js]{code/web.js}
+
+Here is a route that handles many things, but the important thing to note is that it is called when a user submits a transaction after scanning items to be checked in or checked out.
+
+\lstinputlisting[language=JavaScript,firstline=170,lastline=302,title=kiosk.js]{code/kiosk.js}
+
+Here is the code that sends the list of serial numbers from the client side to be checked in or out.
+
+\lstinputlisting[language=JavaScript,firstline=53,lastline=68,title=cart.js]{code/cart.js}
+
+Depending on your love for JavaScript, here is some fun code that handles the facial recognition on the client.
+After taking images on the client-side, the system sends those images to the server to be saved to the database.
+
+\lstinputlisting[language=JavaScript,title=facial.js]{code/facial.js}
+
+Some even more fun code than the facial recognition is the code that handles barcode scanners. It checks for key presses that happen very rapidly. That is how it determines if there was a barcode scan vs a human typing.
+
+\lstinputlisting[language=JavaScript,firstline=91,lastline=137,title=cart.js]{code/cart.js}
+
+On our main page, there are a number of tables. Here is how we implemented the CPU table. It utilizes DataTables.js, a JQuery library for creating dynamic tables. As you can see from the code below, there are a lot of events and settings involved to get the tables just the way we want them.
+
+\lstinputlisting[language=JavaScript,firstline=23,lastline=155,title=table.js]{code/table.js}
+\lstinputlisting[language=JavaScript,firstline=647,lastline=798]{code/table.js}
+
+Below are the scubbers and validators for all the items. The scrubbers are in charge of converting the data into usable formats, and after the data has been scrubbed, it goes through the validator to make sure the input the user added was valid. If the input was not valid, the system will send the client an array of messages to let them how how to remedy the issues.
+
+\lstinputlisting[language=JavaScript,title=scrubbers.js]{code/scrubbers.js}
+\lstinputlisting[language=JavaScript,title=validators.js]{code/validators.js}
+
+\section{Appendix 2: Additional Photos}
+\begin{figure}[!ht]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=0.9\textwidth]{img-4.eps}
+    \caption{The CPU table.}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=0.9\textwidth]{img-3.eps}
+    \caption{Filtering table based on number of cores and external name.}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=0.9\textwidth]{img-2.eps}
+    \caption{The screen for adding a new CPU.}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=0.9\textwidth]{img-1.eps}
+    \caption{The kiosk cart screen, with some items to check out.}
+\end{figure}
+
+%\section{Conclusion}
 % The conclusion goes here.
 
 \ifCLASSOPTIONcaptionsoff
