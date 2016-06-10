@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.4)  9 JUN 2016 20:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.4)  9 JUN 2016 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2045,7 +2045,7 @@ e/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CS463_Group03_Final_Report.pdf (71 pages, 2083174 bytes).
+Output written on CS463_Group03_Final_Report.pdf (71 pages, 2082790 bytes).
 PDF statistics:
  3716 PDF objects out of 4296 (max. 8388607)
  3374 compressed objects within 34 object streams
